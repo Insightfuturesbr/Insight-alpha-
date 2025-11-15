@@ -1,0 +1,58 @@
+{% extends "public/base.html" %}
+
+{% block title %}Comparativo - Insight Futures{% endblock %}
+{% block page_key %}comparativo{% endblock %}
+
+{% block body_wrapper %}
+<main data-page="comparativo">
+<section id="comparativo-insight" class="container-if section">
+
+  <h2 class="text-2xl md:text-3xl font-semibold text-gradient mb-6 flex items-center gap-2">
+    ⚖️ Insight Futures reduz risco e transforma recuperações em lucro real
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="card p-6">
+      <h3 class="text-xl font-bold text-yellow-300 mb-4">📉 Estratégia sem controle</h3>
+      <ul class="space-y-1 text-sm">
+        <li>🔹 Total de Operações: <span id="total_operacoes">—</span></li>
+        <li>🔻 Negativas: <span id="operacoes_negativas">—</span></li>
+        <li>🟡 Recuperações: <span id="operacoes_amortizacao">—</span></li>
+        <li>🟢 Lucros Reais: <span id="operacoes_lucro">—</span></li>
+        <li>💸 Lucro Final: <span id="lucro_final">—</span></li>
+        <li>📉 Máximo Drawdown: <span id="drawdown_maximo">—</span></li>
+        <li>📈 Maior Lucro Acumulado: <span id="maior_lucro_acumulado">—</span></li>
+      </ul>
+    </div>
+
+    <div class="card p-6 border border-lime-500">
+      <h3 class="text-xl font-bold text-lime-400 mb-4">🤖 Insight Futures ativo com inteligência</h3>
+      <ul class="space-y-1 text-sm">
+        <li>🔹 Total de Operações: <span id="total_operacoes_backtest">—</span></li>
+        <li>🔻 Negativas: <span id="operacoes_negativas_backtest">—</span></li>
+        <li>🟡 Recuperações: <span id="operacoes_amortizacao_backtest">—</span></li>
+        <li>🟢 Lucros Reais: <span id="operacoes_lucro_backtest">—</span></li>
+        <li>💸 Lucro Final: <span id="lucro_final_backtest">—</span></li>
+        <li>📉 Máximo Drawdown: <span id="drawdown_maximo_backtest">—</span></li>
+        <li>📈 Maior Lucro Acumulado: <span id="maior_lucro_acumulado_backtest">—</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-8 p-5 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+    <div>
+      <p id="headlineComparativo" class="text-2xl md:text-3xl font-extrabold text-lime-300">—</p>
+      <p class="text-slate-300">
+        Menos operações negativas e maior conversão de recuperações em <span class="text-lime-300 font-semibold">lucro real</span>.
+      </p>
+    </div>
+    <a href="{{ url_for('painel_routes.parametrizacao') }}"
+       class="mt-4 md:mt-0 bg-lime-500 hover:bg-lime-400 text-black font-semibold py-2 px-6 rounded-lg transition">
+      💡 Configurar automação (Backtest)
+    </a>
+  </div>
+</section>
+</main>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

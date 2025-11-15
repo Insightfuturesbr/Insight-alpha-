@@ -1,0 +1,32 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"CiclosDrawdownV1",
+  "type":"array",
+  "items":{
+    "type":"object",
+    "required":[
+      "ID Ciclo","Data Início","Data Fim","Duração do Ciclo",
+      "Máxima Dívida do Ciclo","Média Máximas Até o Ciclo","Percentil 75 Máximas Até o Ciclo",
+      "ops_declinio_total","emprestimos_declinio","amortizacoes_declinio","lucros_declinio",
+      "ops_recuperacao_total","emprestimos_recuperacao","amortizacoes_recuperacao","lucros_recuperacao"
+    ],
+    "properties":{
+      "ID Ciclo":{"type":"integer","minimum":1},
+      "Data Início":{"type":"string"},
+      "Data Fim":{"type":"string"},
+      "Duração do Ciclo":{"type":"string"},
+      "Máxima Dívida do Ciclo":{"type":"number"},
+      "Média Máximas Até o Ciclo":{"type":"number"},
+      "Percentil 75 Máximas Até o Ciclo":{"type":"number"},
+      "ops_declinio_total":{"type":"integer","minimum":0},
+      "emprestimos_declinio":{"type":"integer","minimum":0},
+      "amortizacoes_declinio":{"type":"integer","minimum":0},
+      "lucros_declinio":{"type":"integer","minimum":0},
+      "ops_recuperacao_total":{"type":"integer","minimum":0},
+      "emprestimos_recuperacao":{"type":"integer","minimum":0},
+      "amortizacoes_recuperacao":{"type":"integer","minimum":0},
+      "lucros_recuperacao":{"type":"integer","minimum":0}
+    },
+    "additionalProperties":false
+  }
+}

@@ -1,0 +1,93 @@
+{% extends "public/base.html" %}
+
+{% block title %}Pré-Padronização - Insight Futures{% endblock %}
+
+{% block page_key %}analise-prepadronizada{% endblock %}
+
+{% block body_wrapper %}
+<main data-page="analise-prepadronizada">
+
+  <section id="resumo" class="container-if section pt-8">
+    <header class="mb-6">
+      <h2 class="text-2xl md:text-3xl font-semibold text-gradient">
+        📊 Análise Pré-Padronizada da Estratégia
+      </h2>
+      <p class="text-sm text-slate-300">
+        Resultados simulados com contratos padronizados, permitindo análise e
+        comparação independente do lote original operado.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- 🎯 Contratos Desejados -->
+      <div class="card p-4 text-center">
+        <p class="text-sm text-slate-300 mb-2">Número de Contratos Desejados</p>
+
+        <form id="formContratos" class="flex items-center justify-center gap-2">
+          <label for="contratosInput" class="sr-only">Contratos</label>
+          <input
+            type="number"
+            id="contratosInput"
+            placeholder="Carregando..."
+            min="1"
+            step="1"
+            class="w-20 text-center p-1 rounded bg-[#1E293B] text-white border border-white/20 text-sm"
+          />
+          <button
+            id="botaoAtualizarContratos"
+            type="button"
+            class="bg-lime-500 hover:bg-lime-400 text-black px-3 py-1 rounded text-xs font-semibold"
+          >
+            Atualizar
+          </button>
+        </form>
+
+        <p id="contratosStatus" class="text-xs text-gray-400 mt-2"></p>
+      </div>
+
+      <!-- 📘 Ativos -->
+      <div class="card p-4 text-right">
+        <p class="text-sm text-slate-300">Ativos</p>
+        <h2 id="ativo" class="text-sm font-bold text-white">Carregando...</h2>
+      </div>
+
+      <!-- 🗓️ Período -->
+      <div class="card p-4 text-right">
+        <p class="text-sm text-slate-300">Período</p>
+        <h2 id="periodo" class="text-sm font-bold text-white">Carregando...</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- (opcional) espaço para gráficos/tabelas da pré-padronização -->
+  <section class="container-if section pt-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="chart-box">
+        <h3 class="text-sm font-semibold text-gray-300 mb-4">📈 Operações (Pré)</h3>
+        <div id="grafico-pre-operacoes" class="w-full h-[260px]"></div>
+      </div>
+      <div class="chart-box">
+        <h3 class="text-sm font-semibold text-gray-300 mb-4">🥧 Composição (Pré)</h3>
+        <div id="grafico-pre-composicao" class="w-full h-[260px]"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script>
+  // Enter para enviar e reaproveitar o mesmo botão
+  const form = document.getElementById('formContratos');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('botaoAtualizarContratos')?.click();
+  });
+  document.getElementById('contratosInput')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('botaoAtualizarContratos')?.click();
+    }
+  });
+</script>
+{% endblock %}
+
+

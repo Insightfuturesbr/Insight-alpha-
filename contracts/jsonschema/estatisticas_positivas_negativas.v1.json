@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"EstatisticasPositivasNegativasV1",
+  "type":"object",
+  "required":[
+    "qtd_positivas","qtd_negativas","qtd_neutras",
+    "pct_positivas","pct_negativas","pct_neutras",
+    "soma_positivas","soma_negativas","soma_neutras",
+    "media_positivas","media_negativas",
+    "perc75_positivas","perc25_negativas"
+  ],
+  "properties":{
+    "qtd_positivas":{"type":"integer","minimum":0},
+    "qtd_negativas":{"type":"integer","minimum":0},
+    "qtd_neutras":{"type":"integer","minimum":0},
+
+    "pct_positivas":{"type":"number"},
+    "pct_negativas":{"type":"number"},
+    "pct_neutras":{"type":"number"},
+
+    "soma_positivas":{"type":"number"},
+    "soma_negativas":{"type":"number"},
+    "soma_neutras":{"type":"number"},
+
+    "media_positivas":{"type":"number"},
+    "media_negativas":{"type":"number"},
+    "perc75_positivas":{"type":"number"},
+    "perc25_negativas":{"type":"number"}
+  },
+  "additionalProperties": false
+}

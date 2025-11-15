@@ -1,0 +1,46 @@
+<!-- web/templates/painel/_estado_atual.html -->
+<div class="rounded-2xl p-5 bg-slate-800/50 border border-slate-700">
+  <div class="flex items-center justify-between">
+    <h3 class="text-base font-semibold">Estado Atual da Estratégia</h3>
+    <span class="text-xs opacity-70">{{ e.ts.strftime('%d/%m %H:%M') }}</span>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+    <div>
+      <div class="text-xs opacity-70">Fase</div>
+      <div class="text-xl">{{ e.fase }}</div>
+    </div>
+
+    <div>
+      <div class="text-xs opacity-70">Dívida Atual</div>
+      <div class="text-xl">
+        {% if e.divida_atual is not none %}{{ "%.2f"|format(e.divida_atual) }}{% else %}—{% endif %}
+      </div>
+    </div>
+
+    <div>
+      <div class="text-xs opacity-70">Média Máximas Dívidas</div>
+      <div class="text-xl">
+        {% if e.media_maximas_dividas is not none %}{{ "%.2f"|format(e.media_maximas_dividas) }}{% else %}—{% endif %}
+      </div>
+    </div>
+
+    <div>
+      <div class="text-xs opacity-70">P25 Máximas Dívidas</div>
+      <div class="text-xl">
+        {% if e.p25_maximas_dividas is not none %}{{ "%.2f"|format(e.p25_maximas_dividas) }}{% else %}—{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 flex items-center gap-3">
+    <span class="px-3 py-1 rounded-full text-sm
+      {% if e.recomendacao=='ATIVAR' %} bg-emerald-500/20 text-emerald-300
+      {% elif e.recomendacao=='PAUSAR' %} bg-amber-500/20 text-amber-300
+      {% elif e.recomendacao=='DESLIGAR' %} bg-rose-500/20 text-rose-300
+      {% else %} bg-slate-600/40 text-slate-200 {% endif %}">
+      {{ e.recomendacao }}
+    </span>
+    <span class="text-sm opacity-80">{{ e.motivo }}</span>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+.container-if{max-width:1800px;margin-inline:auto;padding-inline:1rem;margin-top:clamp(32px, 2.5vh, 32px);}
+.section{padding-block:var(--gap-section)}
+
+.grid-2{display:grid;grid-template-columns:1fr;gap:1rem}
+@media (min-width:768px){.grid-2{grid-template-columns:1fr 1fr;gap:1.5rem}}

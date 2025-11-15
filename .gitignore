@@ -1,0 +1,117 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# Flask / instance folder (for config, uploads, etc.)
+instance/
+*.db
+*.sqlite3
+
+# Pytest / coverage
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# IDEs / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Outputs / artifacts
+outputs/
+dependencies/
+
+collect_paths.py
+
+
+chat history.md
+collect_paths.py
+cookie.txt
+app.log
+copy_from_list.py
+debug_chart.html
+debug_chart.py
+debug_processing.py
+dependencies_list.txt
+InsightFutures_Mermaid_Plan.md
+InsightFutures_Transformation_Plan.drawio
+package-lock.json
+test_processing.py
+.vscode
+
+node_modules/
+package.json
+yarn.lock
+dist/
+build/
+coverage/
+reports/
+.nyc_output/
+.eslintcache
+*.tgz
+*.log
+*.tmp
+*.tsbuildinfo
+.idea/
+
+tests
+dataset/*
+
+# But don’t ignore the folder itself
+dataset/
+
+output/*
+
+# But don’t ignore the folder itself
+output/
+
+
+uploads/*
+
+# But don’t ignore the folder itself
+uploads/scripts/deployctl.sh

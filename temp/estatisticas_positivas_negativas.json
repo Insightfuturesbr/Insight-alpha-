@@ -1,0 +1,15 @@
+{
+  "qtd_positivas": 3176,
+  "qtd_negativas": 987,
+  "qtd_neutras": 0,
+  "pct_positivas": 76.29,
+  "pct_negativas": 23.71,
+  "pct_neutras": 0.0,
+  "soma_positivas": 128097.0,
+  "soma_negativas": -113136.0,
+  "soma_neutras": 0.0,
+  "media_positivas": 40.33,
+  "media_negativas": -114.63,
+  "perc75_positivas": 52.0,
+  "perc25_negativas": -143.0
+}

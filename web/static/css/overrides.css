@@ -1,0 +1,101 @@
+/* Badge circular com a marca ao fundo (glass + ring) */
+.brand-badge {
+  width: 48px; height: 48px;                 /* +10% */
+  border-radius: 9999px;
+  position: relative;
+  display: grid; place-items: center;
+  box-shadow: 0 6px 30px rgba(0,0,0,.25),
+              inset 0 0 0 1px rgba(255,255,255,.08);
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(0,255,163,.12), transparent 60%),
+    radial-gradient(120% 120% at 100% 100%, rgba(0,175,255,.10), transparent 60%),
+    rgba(20, 30, 48, .65);
+  backdrop-filter: blur(6px);
+  transition: transform .18s ease;
+}
+.brand-badge svg { width: 24px; height: 24px; stroke-width: 2.8; }  /* mais legível */
+
+.brand-badge::before {
+  content: "";
+  border-radius: inherit;
+  opacity: .18;
+  background-image: url("/static/img/marca.png"); /* ajuste se usar outro arquivo */
+  background-size: 130%;
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+}
+
+/* Anel */
+.brand-ring {
+  position: absolute; inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from 210deg,
+             #00ffa3 0%, #00b7ff 30%, #6a5cff 55%, #00ffa3 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: .55;
+}
+
+/* Glow no hover – cor controlada por variável */
+.brand-badge { --glow: 16,185,129; } /* fallback (emerald) */
+.brand-badge::after {
+  content: "";
+  border-radius: inherit;
+  background:
+    radial-gradient(60% 60% at 50% 50%, rgba(var(--glow), .45), transparent 65%);
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity .18s ease;
+  pointer-events: none;
+}
+.brand-badge:hover { transform: translateY(-1px) scale(1.04); }
+.brand-badge:hover::after { opacity: .6; }
+
+/* Paletas por função (RGB) */
+.glow-emerald { --glow: 16,185,129; }  /* emerald-500 */
+.glow-sky     { --glow: 56,189,248; }  /* sky-400    */
+.glow-red     { --glow: 248,113,113; } /* red-400    */
+.glow-indigo  { --glow: 129,140,248; } /* indigo-400 */
+.glow-amber   { --glow: 251,191,36; }  /* amber-400  */
+.glow-fuchsia { --glow: 217,70,239; }  /* fuchsia-500*/
+
+/* ---------- Cards compactos ---------- */
+
+.if-card {
+  background:#122033;
+  border:1px solid #1f3352;
+  border-radius:14px;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  height:220px;
+  transition: transform .15s ease;
+}
+.if-card:hover { transform: translateY(-2px); }
+
+.if-badge { font-size:10px; padding:4px 8px; border-radius:999px; background:#0b2a4a; color:#bfe9ff; }
+.if-meta { font-size:12px; opacity:.7; }
+.if-chart { margin-top:10px; height:80px; }
+.if-actions { margin-top:auto; display:flex; gap:6px; font-size:12px; }
+.if-actions .btn { background:#0b2a4a; color:#c7f9ff; padding:6px 8px; border-radius:8px; border:1px solid #174166; }
+.if-actions .btn:hover { background:#0e355b; }
+
+/* shared grid used by strategies and dashboard recent */
+.if-grid { display:grid; grid-template-columns:repeat(1, minmax(0, 1fr)); gap:16px; }
+@media (min-width:768px){ .if-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width:1024px){ .if-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* -------- Backtest page select fixes -------- */
+[data-page="parametrizacao-backtest"] select {
+  position: static !important;
+  display: block;
+  z-index: auto;
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+}
+[data-page="parametrizacao-backtest"] select option { position: static !important; }
+[data-page="parametrizacao-backtest"] .card { overflow: visible; }
+[data-page="parametrizacao-backtest"] .card:hover { transform: none; }

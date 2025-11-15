@@ -1,0 +1,67 @@
+{% extends "public/base.html" %}
+{% block page_key %}exportacoes{% endblock %}
+{% block title %}Exportações - Insight Futures{% endblock %}
+
+{% block body %}
+<section id="exportacoes" class="container-if section">
+  <h2 class="text-2xl md:text-3xl font-semibold text-gradient mb-6">📂 Exportações</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- CSVs “fixos” da última execução -->
+    <div class="card p-6">
+      <h3 class="card__title mb-4">Arquivos principais</h3>
+      <ul class="space-y-3 text-slate-200">
+        <li>
+          <a class="underline hover:text-lime-300"
+             href="{{ url_for('painel_routes.download_export', filename='InsightFuturesResults.csv') }}">
+            📁 InsightFuturesResults.csv
+          </a>
+        </li>
+        <li>
+          <a class="underline hover:text-lime-300"
+             href="{{ url_for('painel_routes.download_export', filename='estrategiapadronizada.csv') }}">
+            📁 estrategiapadronizada.csv
+          </a>
+        </li>
+        <li>
+          <a class="underline hover:text-lime-300"
+             href="{{ url_for('painel_routes.download_export', filename='fluxocalculado.csv') }}">
+            📁 fluxocalculado.csv
+          </a>
+        </li>
+        <li>
+          <a class="underline hover:text-lime-300"
+             href="{{ url_for('painel_routes.download_export', filename='ciclos_drawdown.csv') }}">
+            📁 ciclos_drawdown.csv
+          </a>
+        </li>
+        <li>
+          <a class="underline hover:text-lime-300"
+             href="{{ url_for('painel_routes.download_export', filename='posicoesrelativas.csv') }}">
+            📁 posicoesrelativas.csv
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Pastas de resultados por execução -->
+    <div class="card p-6">
+      <h3 class="card__title mb-4">Resultados por execução</h3>
+      <p class="text-sm text-slate-300 mb-3">
+        Cada upload/backtest cria uma pasta em <code>outputs/resultados/&lt;usuario_YYYYMMDD_HHMMSS&gt;</code>.
+      </p>
+      <ul class="space-y-3 text-slate-200">
+        <li>
+          <a class="underline hover:text-lime-300"
+             href="{{ url_for('painel_routes.download_export_resultados', subpath='admin_20250813_173044/ultimo_ciclo_completo.json') }}">
+            📄 ultimo_ciclo_completo.json (execução de exemplo)
+          </a>
+        </li>
+        <!-- adicione outras quando quiser (mesmo padrão) -->
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

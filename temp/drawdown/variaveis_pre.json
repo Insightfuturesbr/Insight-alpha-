@@ -1,0 +1,22 @@
+{
+  "total_operacoes": 4163,
+  "periodo": "Período 02/01/2023 a 29/03/2023",
+  "contratos_media": 4.999039154455922,
+  "contratos_max": 5.0,
+  "contratos_soma": 20811.0,
+  "resultado_liquido_acumulado": 14851.4,
+  "resultado_bruto": 27338.0,
+  "resultado_acumulado_pontos": 27446.0,
+  "taxas": 12486.6,
+  "percentual_liquido": 54.33,
+  "percentual_taxas": 45.67,
+  "percentual_restante": 0.0,
+  "parametros_ativos": {
+    "multiplicador": 1.0,
+    "taxa": 0.3,
+    "deslocamento_min": 5.0,
+    "valor_por_ponto": 0.2,
+    "contratos": 5
+  },
+  "resultado_liquido_media": 3.57
+}

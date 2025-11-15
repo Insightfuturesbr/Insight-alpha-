@@ -1,0 +1,191 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"UltimoCicloCompletoV1",
+  "type":"array",
+  "items": {
+  "type": "object",
+
+  "required": ["Abertura", "Ativo", "Fechamento", "ID Operação"],
+
+  "properties": {
+    "Abertura": { "type": "string" },
+    "Fechamento": { "type": "string" },
+    "Ativo": { "type": "string" },
+
+    "Lado": { "type": "string" },
+    "Qtd Compra": { "type": ["integer","number","null"] },
+    "Qtd Venda": { "type": ["integer","number","null"] },
+
+    "Preço Compra": { "type": ["number","null"] },
+    "Preço Venda":  { "type": ["number","null"] },
+
+    "Res. Operação": { "type": ["number","null"] },
+    "Res. Operação (%)": { "type": ["number","null"] },
+
+    "contratos_negociados": { "type": ["integer","number","null"] },
+    "Contratos Negociados": { "type": ["integer","number","null"] },
+
+    "resultado_operacao_real_antes": { "type": ["number","null"] },
+    "Resultado da Operação em real antes da padronização": { "type": ["number","null"] },
+
+    "deslocamento_antes": { "type": ["number","null"] },
+    "Deslocamento do ativo antes da padronização": { "type": ["number","null"] },
+
+    "taxas_antes": { "type": ["number","null"] },
+    "Taxas antes da padronização": { "type": ["number","null"] },
+
+    "resultado_liquido_antes": { "type": ["number","null"] },
+    "Resultado líquido antes da padronização": { "type": ["number","null"] },
+
+    "resultado_liquido_acumulado_antes": { "type": ["number","null"] },
+    "Resultado líquido Total Acumulado antes da padronização": { "type": ["number","null"] },
+
+    "resultado_pontos_acumulado": { "type": ["number","null"] },
+    "Resultado Total Acumulado em pontos": { "type": ["number","null"] },
+
+    "delta_preco": { "type": ["number","null"] },
+    "desvio_vs_tick": { "type": ["number","null"] },
+    "alerta_tick_invalido": { "type": ["boolean","number","string","null"] },
+
+    "pl_bruto_padronizado": { "type": ["number","null"] },
+    "pl_liquido_padronizado": { "type": ["number","null"] },
+    "pl_bruto_acumulado": { "type": ["number","null"] },
+    "pl_liquido_acumulado": { "type": ["number","null"] },
+    "custos_operacionais_acumulados": { "type": ["number","null"] },
+
+    "ativacao_automacao": { "type": ["boolean","string","null"] },
+    "Ativação Automação": { "type": ["boolean","string","null"] },
+
+    "Resultado Simulado Padronizado Bruto": { "type": ["number","null"] },
+    "Resultado Simulado Padronizado Líquido": { "type": ["number","null"] },
+    "Resultado Simulado Padronizado Bruto Acumulado": { "type": ["number","null"] },
+    "Resultado Simulado Padronizado Líquido Acumulado": { "type": ["number","null"] },
+    "Taxas Acumuladas Padronização": { "type": ["number","null"] },
+
+    "ID Operação": { "type": "string" },
+    "Caixa Líquido": { "type": ["number","null"] },
+
+    "ID Dívida": { "type": ["string","null"] },
+    "Dívida Acumulada": { "type": ["number","null"] },
+
+    "ID Empréstimo": { "type": ["string","null"] },
+    "Valor Emprestado": { "type": ["number","null"] },
+
+    "Valores Recebidos": { "type": ["number","null"] },
+
+    "ID Amortização/ID Empréstimo": { "type": ["string","null"] },
+    "Amortização": { "type": ["number","null"] },
+
+    "ID Lucro": { "type": ["string","null"] },
+    "Lucro Gerado": { "type": ["number","null"] },
+
+    "ID Sequencias": { "type": ["string","null"] },
+
+    "Sequencia_Valores_Emprestados": {
+      "anyOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+    "Sequencia_Valores_Recebidos": {
+      "anyOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" } }
+      ]
+    },
+
+    "ID Ciclo": { "type": ["integer","number","string","null"] },
+
+    "emprestimo_acumulado_ciclo": { "type": ["number","null"] },
+    "amortizacao_acumulada_ciclo": { "type": ["number","null"] },
+    "lucro_acumulado_ciclo": { "type": ["number","null"] },
+    "qtd_emprestimos_ciclo": { "type": ["integer","number","null"] },
+    "qtd_amortizacoes_ciclo": { "type": ["integer","number","null"] },
+    "qtd_lucros_ciclo": { "type": ["integer","number","null"] },
+
+    "Máxima Dívida Acumulada": { "type": ["number","null"] },
+    "Média das Máximas Dívidas": { "type": ["number","null"] },
+    "Percentil 25 das Máximas Dívidas": { "type": ["number","null"] },
+    "Posição Relativa Dívida": { "type": ["number","null"] },
+
+    "Lucro Acumulado": { "type": ["number","null"] },
+    "Média das Máximas dos Lucros": { "type": ["number","null"] },
+    "Percentil 25 das Máximas dos Lucros": { "type": ["number","null"] },
+    "Posição Relativa Lucro": { "type": ["number","null"] }
+  },
+
+  "additionalProperties": true
+}
+,
+
+    "properties":{
+      "Abertura":{"type":"string"},
+      "Ativo":{"type":"string"},
+      "Tempo Operação":{"type":"string"},
+      "Contratos Negociados":{"type":"number"},
+      "Qtd Venda":{"type":"integer"},
+      "Lado":{"type":"string"},
+      "Preço Compra":{"type":"number"},
+      "Preço Venda":{"type":"number"},
+      "Preço de Mercado":{"type":"number"},
+      "Médio":{"type":"string"},
+      "Res. Intervalo Bruto":{"type":"number"},
+      "Res. Intervalo (%)":{"type":"number"},
+      "Número Operação":{"type":"integer"},
+      "Resultado da Operação em real antes da padronização":{"type":"number"},
+      "Deslocamento do ativo antes da padronização":{"type":"number"},
+      "Drawdown":{"type":"number"},
+
+      "Ganho Max.":{"type":"number"},
+      "Perda Max.":{"type":"number"},
+      "TET":{"type":"number"},
+      "Total":{"type":"number"},
+      "Taxas antes da padronização":{"type":"number"},
+      "Resultado líquido antes da padronização":{"type":"number"},
+      "Resultado Bruto Operação":{"type":"number"},
+      "Resultado líquido Total Acumulado antes da padronização":{"type":"number"},
+      "Resultado Total Acumulado em pontos":{"type":"number"},
+      "Diferença":{"type":"number"},
+      "Desvio_Diferença_vs_Deslocamento":{"type":"number"},
+      "Alerta_Divergência_Diferença":{"type":"number"},
+
+      "Resultado Simulado Padronizado Bruto":{"type":"number"},
+      "Resultado Simulado Padronizado Líquido":{"type":"number"},
+      "Resultado Simulado Padronizado Bruto Acumulado":{"type":"number"},
+      "Resultado Simulado Padronizado Líquido Acumulado":{"type":"number"},
+      "Taxas Acumuladas Padronização":{"type":"number"},
+      "Ativação Automação":{"type":"string"},
+      "ID Operação":{"type":"string"},
+      "Caixa Líquido":{"type":"number"},
+      "ID Dívida":{"type":"string"},
+      "Dívida Acumulada":{"type":"number"},
+      "ID Empréstimo":{"type":"string"},
+      "Valor Emprestado":{"type":"number"},
+      "ID Amortização/ID Empréstimo":{"type":"string"},
+      "Amortização":{"type":"number"},
+      "ID Lucro":{"type":"string"},
+      "Lucro Gerado":{"type":"number"},
+      "Sequencia_Valores_Emprestados":{"type":"number"},
+      "Sequencia_Valores_Recebidos":{"type":"number"},
+      "ciclo":{"type":"string"},
+
+      "emprestimo_acumulado_ciclo":{"type":"number"},
+      "amortizacao_acumulada_ciclo":{"type":"number"},
+      "lucro_acumulado_ciclo":{"type":"number"},
+      "qtd_emprestimos_ciclo":{"type":"integer"},
+      "qtd_amortizacoes_ciclo":{"type":"integer"},
+      "qtd_lucros_ciclo":{"type":"integer"},
+
+      "Máxima Dívida Acumulada":{"type":"number"},
+      "Média das Máximas Dívidas":{"type":"number"},
+      "Percentil 25 das Máximas Dívidas":{"type":"number"},
+      "Posição Relativa Dívida":{"type":"number"},
+      "Lucro Acumulado":{"type":"number"},
+      "Média das Máximas dos Lucros":{"type":"number"},
+      "Percentil 25 das Máximas dos Lucros":{"type":"number"},
+      "Posição Relativa Lucro":{"type":"number"},
+      "Tipo Resultado":{"type":"string"}
+    },
+    "additionalProperties": false
+  }
+

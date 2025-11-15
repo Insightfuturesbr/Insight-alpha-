@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insight Futures</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fundo/tema -->
+  <style>
+    :root { --nav-h: 80px; }
+    body {
+      background:
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+        url('{{ url_for('static', filename='img/3.jpg') }}') center/cover no-repeat fixed;
+      background-color: #0A192F;
+      color: white;
+    }
+
+    /* Carrossel vertical */
+    .carousel-container {
+      height: 100dvh;                 /* usa altura real do viewport */
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+    .carousel-container::-webkit-scrollbar { display: none; }
+
+    .carousel-slide {
+      min-height: 100dvh;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      color: white;
+    }
+    .carousel-slide img {
+      max-width: 90%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 1rem;
+    }
+    .carousel-slide .imagem-slide-1 {
+      margin-left: -2rem;
+      max-width: 85%;
+    }
+  </style>
+</head>
+
+<body class="text-white font-sans">
+  <!-- Navbar -->
+  <nav class="w-full bg-auto text-white px-8 py-4 flex justify-between items-center shadow-md fixed top-0 left-0 right-0 z-50 backdrop-blur">
+    <div class="flex items-center space-x-4">
+      <img src="{{ url_for('static', filename='img/marca.png') }}" alt="Logo" class="w-auto h-8">
+    </div>
+
+    <button onclick="abrirLogin()" class="bg-lime-500 hover:bg-lime-600 text-[#0A192F] font-bold py-2 px-6 rounded-full transition">
+      Login
+    </button>
+  </nav>
+
+  <!-- Espaço da navbar -->
+  <div class="h-20"></div>
+
+  <!-- HERO -->
+  <section class="relative min-h-[calc(100dvh-120px)] flex items-center">
+    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 py-24 max-w-3xl mx-auto">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" class="w-60 mb-6" alt="Logo">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+        A Inteligência que Usa a Simulação para Maximizar seu Lucro Real
+      </h1>
+      <p class="text-lg text-gray-300 mb-8">
+        A Insight Futures acompanha sua automação em tempo real e revela os melhores momentos de operar com base no comportamento da sua própria estratégia.
+      </p>
+      <a href="{{ url_for('auth_routes.register') }}" class="bg-lime-500 hover:bg-lime-600 text-[#0A192F] font-bold py-4 px-10 rounded-full text-lg transition">
+        Começar Meu Teste Gratuito
+      </a>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section class="max-w-7xl mx-auto text-center pt-24 pb-20 px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-lime-400 mb-6 leading-tight">
+      🔥 Transforme os piores dias em dados — não em prejuízo.
+    </h2>
+    <p class="text-lg text-gray-100 max-w-3xl mx-auto mb-16">
+      A Insight Futures coleta tudo pela conta simulação e entrega uma análise estratégica de risco e lucro.
+      Você ganha dados concretos para decidir quando vale a pena operar com dinheiro real.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <!-- Card 1 -->
+      <div class="bg-[#1B263B]/90 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+        <div class="flex items-center justify-center mb-4">
+          <img src="{{ url_for('static', filename='img/marca_logo.png') }}" class="w-10 h-10" alt="Ícone">
+        </div>
+        <h3 class="text-lime-400 font-bold text-xl mb-2 text-center">Evite operações ruins</h3>
+        <p class="text-gray-300 text-sm text-center">
+          Acompanhe o drawdown da sua estratégia e pare de operar no escuro nos piores momentos estatísticos.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#1B263B]/90 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+        <div class="flex items-center justify-center mb-4">
+          <img src="{{ url_for('static', filename='img/marca_logo.png') }}" class="w-10 h-10" alt="Ícone">
+        </div>
+        <h3 class="text-lime-400 font-bold text-xl mb-2 text-center">Lucre com inteligência</h3>
+        <p class="text-gray-300 text-sm text-center">
+          A Insight identifica quando há maior chance de amortização e lucro real — com base nos seus próprios dados.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#1B263B]/90 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+        <div class="flex items-center justify-center mb-4">
+          <img src="{{ url_for('static', filename='img/marca_logo.png') }}" class="w-10 h-10" alt="Ícone">
+        </div>
+        <h3 class="text-lime-400 font-bold text-xl mb-2 text-center">Use a simulação a seu favor</h3>
+        <p class="text-gray-300 text-sm text-center">
+          A Insight é a única ferramenta que coleta e analisa a performance da automação direto da conta de simulação.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrossel Vertical -->
+  <div class="carousel-container">
+    <!-- Slide 1 -->
+    <section class="carousel-slide">
+      <div class="w-full md:w-1/2 md:pr-10">
+        <img src="{{ url_for('static', filename='img/marca_logo.png') }}" alt="Logo" class="w-40 mb-6">
+        <h2 class="text-4xl font-bold text-[#B6E21F] ml-1 md:ml-3 mb-6 leading-tight">
+          Analise o desempenho<br>da sua automação com<br>base nos dados reais<br>da conta simulação.
+        </h2>
+        <p class="text-gray-300 ml-1 md:ml-3 max-w-md">
+          O Insight revela uma análise detalhada dos padrões históricos, que funciona como um check-up: identifique riscos, compare com a média e aja com confiança.
+        </p>
+      </div>
+      <div class="hidden md:flex w-1/2 justify-center">
+        <img src="{{ url_for('static', filename='img/coladas.png') }}" alt="Imagem Drawdown" class="imagem-slide-1">
+      </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="carousel-slide">
+      <div class="w-full md:w-1/2 md:pr-10">
+        <img src="{{ url_for('static', filename='img/marca_logo.png') }}" alt="Logo" class="w-40 mb-6">
+        <h2 class="text-4xl font-bold text-lime-300 ml-1 md:ml-3 mb-6 leading-tight">
+          Descubra Suportes e<br>Resistências estatísticas<br>da sua automação: ative na<br>recuperação e no lucro.
+        </h2>
+        <p class="text-gray-300 ml-1 md:ml-3 max-w-md">
+          A Insight com base no histórico da sua própria estratégia — ajuda a visualizar o limite do risco e o potencial de retomada.
+        </p>
+      </div>
+      <div class="hidden md:flex w-1/2 justify-center">
+        <img src="{{ url_for('static', filename='img/tela_drawdown_real_time.png') }}" alt="Imagem Suportes">
+      </div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="carousel-slide">
+      <div class="w-full md:w-1/2 md:pr-10">
+        <img src="{{ url_for('static', filename='img/marca_logo.png') }}" alt="Logo" class="w-40 mb-6">
+        <h2 class="text-4xl font-bold text-pink-400 ml-1 md:ml-3 mb-6 leading-tight">
+          Teste ativações e pausas<br>inteligentes com base no<br>fluxo da sua estratégia.
+        </h2>
+        <p class="text-gray-300 ml-1 md:ml-3 max-w-md">
+          Simule como sua estratégia teria performado se fosse pausada durante os piores ciclos e ativada nos momentos de maior probabilidade de lucro.
+        </p>
+      </div>
+      <div class="hidden md:flex w-1/2 justify-center">
+        <img src="{{ url_for('static', filename='img/tela_parametrizacao.png') }}" alt="Imagem Parametrização">
+      </div>
+    </section>
+  </div>
+
+  <!-- Comparativo -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-white mb-8">⚖️ Antes e Depois da Insight Futures</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-left">
+        <div class="bg-[#102840]/90 p-6 rounded-xl">
+          <h3 class="text-red-400 font-bold text-lg mb-2">Sem Insight</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-1">
+            <li>Opera o tempo todo, mesmo em ciclos ruins</li>
+            <li>Ignora drawdowns e recuperações</li>
+            <li>Paga imposto sem lucro real</li>
+            <li>Não aprende com os próprios dados</li>
+          </ul>
+        </div>
+        <div class="bg-[#102840]/90 p-6 rounded-xl">
+          <h3 class="text-lime-400 font-bold text-lg mb-2">Com Insight</h3>
+          <ul class="list-disc list-inside text-gray-300 space-y-1">
+            <li>Opera com base em estatísticas reais</li>
+            <li>Evita prejuízos e melhora a previsibilidade</li>
+            <li>Ativa nos momentos mais lucrativos</li>
+            <li>Gera um novo resultado otimizado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="bg-[#001F3F]/80 py-20 px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">📈 Comece sua transformação agora</h2>
+    <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+      Suba seu relatório do Profit ou MetaTrader e veja como a Insight melhoraria suas decisões automatizadas com base em risco e recuperação real.
+    </p>
+    <a href="{{ url_for('auth_routes.register') }}" class="bg-lime-500 hover:bg-lime-600 text-[#0A192F] font-bold py-4 px-10 rounded-full text-lg transition">
+      Testar com Meus Dados
+    </a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-[#0A192F]/90 py-6 text-center text-gray-400 text-sm">
+    &copy; 2024 Insight Futures. Todos os direitos reservados.
+  </footer>
+
+  <!-- Modal de Login -->
+  <div id="modalLogin" class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden z-50">
+    <div class="bg-[#0A192F] bg-opacity-90 p-8 rounded-2xl shadow-xl w-80 text-white relative">
+      <button aria-label="Fechar" onclick="fecharLogin()"
+              class="absolute right-3 top-2 text-slate-300 hover:text-white text-xl leading-none">×</button>
+
+      <div class="flex justify-center mb-4">
+        <img src="{{ url_for('static', filename='img/marca.png') }}" alt="Insight Futures Logo" class="w-auto h-12">
+      </div>
+      <h2 class="text-xl font-bold mb-4 text-center">Faça Login</h2>
+
+      <form id="formLogin">
+        <input type="text" name="username" placeholder="Usuário" required
+               class="w-full p-3 mb-3 rounded bg-[#0F172A] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#B6E21F]">
+        <input type="password" name="password" placeholder="Senha" required
+               class="w-full p-3 mb-3 rounded bg-[#0F172A] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#B6E21F]">
+        <p id="erroLogin" class="text-red-500 text-sm hidden mb-3 text-center">Usuário ou senha incorretos</p>
+
+        <div class="flex justify-end gap-2">
+          <button type="button" onclick="fecharLogin()" class="px-4 py-2 bg-gray-500 hover:bg-gray-600 rounded text-white transition">
+            Cancelar
+          </button>
+          <button type="submit" class="px-4 py-2 bg-[#B6E21F] hover:bg-[#A1D210] text-[#0A192F] font-bold rounded transition">
+            Iniciar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function abrirLogin(){ modal.classList.remove('hidden'); modal.classList.add('flex'); document.getElementById('erroLogin')?.classList.add('hidden'); }
+    function fecharLogin(){ modal.classList.add('hidden'); modal.classList.remove('flex'); }
+
+    const modal = document.getElementById('modalLogin');
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharLogin(); });
+    modal.addEventListener('click', (e) => { if (e.target === e.currentTarget) fecharLogin(); });
+
+    // Login via /login_api com FormData (igual ao seu)
+    document.getElementById('formLogin').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      try{
+        const res = await fetch('{{ url_for("auth_routes.login_api") }}', { method:'POST', body: formData });
+        const data = await res.json();
+        if (data.status === 'ok') {
+          window.location.href = '{{ url_for("painel_routes.painel") }}';
+        } else {
+          document.getElementById('erroLogin').classList.remove('hidden');
+        }
+      }catch{
+        document.getElementById('erroLogin').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

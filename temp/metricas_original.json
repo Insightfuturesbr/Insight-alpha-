@@ -1,0 +1,12 @@
+{
+  "resultado_liquido_final": 33775.0,
+  "drawdown_maximo": -2836.0,
+  "maior_lucro_acumulado": 34329.0,
+  "n_operacoes_automacao_ativada": 14515,
+  "n_operacoes_positivas": 1093,
+  "n_operacoes_negativas": 3537,
+  "n_operacoes_amortizacao": 10120,
+  "soma_lucro_gerado": 34329.0,
+  "soma_valor_emprestado": -340906.0,
+  "soma_amortizacao": 340352.0
+}

@@ -1,0 +1,12 @@
+{
+  "ativo": "[R] WINFUT",
+  "total_operacoes": 4163,
+  "contratos_padronizados": 5,
+  "taxa_simulada_por_operacao": 3.0,
+  "taxas_totais_padronizadas": 12489.0,
+  "resultado_bruto_padronizado": 27450.0,
+  "resultado_liquido_padronizado": 14961.0,
+  "percentual_liquido": 54.5,
+  "percentual_taxas": 45.5,
+  "percentual_restante": 0.0
+}

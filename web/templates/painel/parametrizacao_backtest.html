@@ -1,0 +1,145 @@
+{% extends "public/base.html" %}
+
+{% block title %}Parametrização do Backtest - Insight Futures{% endblock %}
+{% block page_key %}parametrizacao-backtest{% endblock %}
+
+{% block body_wrapper %}
+<main data-page="parametrizacao-backtest">
+<section id="parametrizacao-backtest" class="container-if section">
+
+  <h2 class="text-2xl md:text-3xl font-semibold text-gradient mb-6">
+    ⚙️ Parametrização do Backtest baseado nas Estatísticas
+  </h2>
+
+  <!-- GRID DOS 3 BLOCOS -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- 🟢 Ativação -->
+    <div class="card p-6 relative">
+      <h3 class="card__title mb-2 flex items-center">
+        🟢 Ativar a automação quando:
+        <div class="relative group ml-2 cursor-pointer">
+          <span class="text-gray-400">ℹ️</span>
+          <div class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-3 py-2 w-72 shadow-lg z-50">
+            <strong>Ativação:</strong><br>
+            Quando a automação está desligada, ela será ativada conforme o drawdown atual atingir o limite configurado.<br><br>
+            - Se escolher "mais severo", ativa quando o drawdown for mais negativo.<br>
+            - Se escolher "menos severo", ativa quando o drawdown for menos negativo.<br><br>
+            A margem ajusta esse limite para ser mais ou menos agressivo.
+          </div>
+        </div>
+      </h3>
+
+      <label class="block text-sm mb-1 text-gray-300">Margem sobre o limite de drawdown (%):</label>
+      <input type="number" name="ativacao_percentual" value="5"
+             class="w-full p-2 mb-2 rounded bg-[#1E293B] border border-gray-500 text-white">
+
+      <label class="block text-sm mb-1 text-gray-300">Base de comparação:</label>
+      <select name="ativacao_base" class="w-full p-2 mb-2 rounded bg-[#1E293B] border border-gray-500 text-white" style="position: initial;">
+        <option value="media_drawdown">📉 Média dos Drawdowns</option>
+        <option value="percentil25_drawdown">📉 Percentil 25 dos Drawdowns</option>
+      </select>
+
+      <label class="block text-sm mb-1 text-gray-300">Condição:</label>
+      <select name="comparador_ativacao" class="w-full p-2 rounded bg-[#1E293B] border border-gray-500 text-white" style="position: initial;">
+        <option value="menor">🔽 Drawdown mais severo (mais negativo) que o limite</option>
+        <option value="maior">🔼 Drawdown menos severo (menos negativo) que o limite</option>
+      </select>
+    </div>
+
+    <!-- 🟡 Pausa -->
+    <div class="card p-6 relative">
+      <h3 class="card__title mb-2 flex items-center">
+        🟡 Pausar automação quando:
+        <div class="relative group ml-2 cursor-pointer">
+          <span class="text-gray-400">ℹ️</span>
+          <div class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-3 py-2 w-72 shadow-lg z-50">
+            <strong>Pausa:</strong><br>
+            Quando a automação está ativa, ela pode ser pausada se atingir um lucro acima ou abaixo do limite configurado.<br>
+            Opções:<br>
+            - Recuperação total do drawdown: para quando o caixa volta a zero.<br>
+            - Alvo simétrico: para quando atinge o dobro da distância do drawdown.<br>
+            - Encerrar após amortização do valor ativado: para quando o sistema devolver exatamente o valor da ativação em amortização, garantindo lucro real.
+          </div>
+        </div>
+      </h3>
+
+      <label class="block text-sm mb-1 text-gray-300">Margem sobre o limite de lucro (%):</label>
+      <input type="number" name="pausa_percentual" value="15"
+             class="w-full p-2 mb-2 rounded bg-[#1E293B] border border-gray-400 text-white">
+
+      <label class="block text-sm mb-1 text-gray-300">Base de comparação:</label>
+      <select name="pausa_base" class="w-full p-2 mb-2 rounded bg-[#1E293B] border border-gray-500 text-white" style="position: initial;">
+        <option value="media_lucro">📈 Média dos Lucros</option>
+        <option value="percentil75_lucro">📈 Percentil 75 dos Lucros</option>
+        <option value="valor_recuperacao">🎯 Recuperação Total do Drawdown</option>
+        <option value="alvo_simetrico">🔁 Alvo Simétrico</option>
+        <option value="amortizacao_entrada">💰 Encerrar após amortização do valor ativado</option>
+      </select>
+
+      <label class="block text-sm mb-1 text-gray-300">Condição:</label>
+      <select name="comparador_pausa" class="w-full p-2 rounded bg-[#1E293B] border border-gray-500 text-white" style="position: initial;">
+        <option value="maior">📈 Lucro MAIOR que o limite configurado</option>
+        <option value="menor">📉 Lucro MENOR que o limite configurado</option>
+      </select>
+
+      <label class="block text-sm mb-1 text-gray-300 mt-2 flex items-center gap-2">
+        <input type="checkbox" id="encerrar_ciclo" checked class="accent-lime-400">
+        Encerrar automaticamente ao fim do ciclo da simulação
+      </label>
+    </div>
+
+    <!-- 🔴 Desativação -->
+    <div class="card p-6 relative">
+      <h3 class="card__title mb-2 flex items-center">
+        🔴 Desativar automação quando:
+        <div class="relative group ml-2 cursor-pointer">
+          <span class="text-gray-400">ℹ️</span>
+          <div class="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded px-3 py-2 w-72 shadow-lg z-50">
+            <strong>Desativação:</strong><br>
+            A automação é desligada em situações críticas de risco (drawdown extremo). Ela permanecerá desligada até que uma nova condição de ativação seja atingida.
+          </div>
+        </div>
+      </h3>
+
+      <label class="block text-sm mb-1 text-gray-300">Margem sobre o drawdown máximo (%):</label>
+      <input type="number" name="desativacao_percentual" value="15"
+             class="w-full p-2 mb-2 rounded bg-[#1E293B] border border-gray-500 text-white">
+
+      <label class="block text-sm mb-1 text-gray-300">Base de comparação:</label>
+      <select name="desativacao_base" class="w-full p-2 mb-2 rounded bg-[#1E293B] border border-gray-500 text-white" style="position: initial;">
+        <option value="maior_drawdown">💣 Maior Drawdown Histórico</option>
+      </select>
+
+      <label class="block text-sm mb-1 text-gray-300">Condição:</label>
+      <select name="comparador_desativacao" class="w-full p-2 rounded bg-[#1E293B] border border-gray-500 text-white" style="position: initial;">
+        <option value="menor">🔽 Drawdown mais severo (mais negativo) que o limite</option>
+        <option value="maior">🔼 Drawdown menos severo (menos negativo) que o limite</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Botão -->
+  <div class="mt-6 text-right">
+    <button id="rodarBacktest" class="bg-[#B6E21F] text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-400 transition">
+      📊 Rodar Simulação
+    </button>
+    <p id="resumo_ciclo" class="mt-4 text-sm text-gray-300"></p>
+  </div>
+
+  <!-- INSIGHT DO BACKTEST - DR. DRAWDOWN -->
+  <div id="blocoInsightBacktest" class="mt-8 flex items-start bg-[#0F172A] bg-opacity-60 p-6 rounded-2xl shadow-xl text-white hidden">
+    <img src="{{ url_for('static', filename='img/dr_drawdown_sorriso_icon.png') }}"
+         alt="Dr. Drawdown" class="w-auto h-72 mr-6 rounded-full border-2 border-lime-500">
+    <div class="bg-[#1B263B] text-gray-200 p-4 rounded-xl w-full relative">
+      <h3 class="text-lime-400 font-bold mb-2 text-lg">📊 Insight do Dr. Drawdown sobre o Backtest:</h3>
+      <p id="textoInsightBacktest" class="text-sm leading-relaxed text-gray-300"></p>
+    </div>
+  </div>
+
+</section>
+</main>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

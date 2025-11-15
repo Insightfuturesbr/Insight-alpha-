@@ -1,0 +1,42 @@
+# Git & VCS
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.venv
+venv
+
+# Node / Frontend
+node_modules
+*.log
+
+# Local/runtime
+uploads
+outputs
+*.db
+*.sqlite
+*.sqlite3
+debug_chart.html
+app.log
+
+# IDE / OS
+.vscode
+.idea
+*.swp
+*.DS_Store
+
+# Archives / large artifacts
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+scripts/deployctl.sh

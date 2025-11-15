@@ -1,0 +1,722 @@
+print(-10 > -2)
+
+//document.addEventListener("DOMContentLoaded", () => {
+//  carregarPrePadronizacao();
+//  carregarPadronizacao();
+//  carregarFluxo();
+//  carregarGraficos();
+//  carregarCiclos();
+//  carregarBacktest();
+//  carregarInsights();
+//  atualizarFluxo();
+//  atualizarCiclos();
+//});
+
+//
+//document.addEventListener("DOMContentLoaded", () => {
+//  fetch('/api/variaveis_padronizacao')
+//    .then(res => res.json())
+//    .then(data => {
+//      const contratosPadrao = data?.contratos_padronizados;
+//      if (contratosPadrao !== undefined) {
+//        const contratosSalvos = sessionStorage.getItem('contratos_desejados');
+//        const valorFinal = contratosSalvos || contratosPadrao;
+//        document.getElementById('contratosInput').value = valorFinal;
+//      }
+//    })
+//    .catch(err => {
+//      console.error("Erro ao carregar contratos padronizados:", err);
+//    });
+//});
+
+
+//// =================== 🚀 Rodar Backtest ===================
+//function rodarBacktest() {
+//  const dados = {
+//    ativacao_percentual: parseFloat(document.querySelector('[name="ativacao_percentual"]').value),
+//    ativacao_base: document.querySelector('[name="ativacao_base"]').value,
+//    comparador_ativacao: document.querySelector('[name="comparador_ativacao"]').value,
+//    pausa_percentual: parseFloat(document.querySelector('[name="pausa_percentual"]').value),
+//    pausa_base: document.querySelector('[name="pausa_base"]').value,
+//    comparador_pausa: document.querySelector('[name="comparador_pausa"]').value,
+//    desativacao_percentual: parseFloat(document.querySelector('[name="desativacao_percentual"]').value),
+//    desativacao_base: document.querySelector('[name="desativacao_base"]').value,
+//    comparador_desativacao: document.querySelector('[name="comparador_desativacao"]').value,
+//    encerrar_ao_fim_do_ciclo: document.getElementById('encerrar_ciclo').checked
+//  };
+//
+//  fetch('/rodar_backtest', {
+//    method: 'POST',
+//    headers: { 'Content-Type': 'application/json' },
+//    body: JSON.stringify(dados)
+//  })
+//    .then(response => response.json())
+//    .then(data => {
+//      if (data.status === 'ok') {
+//        const m = data.metricasback;
+//        const o = data.metricasoriginal;
+//
+//        document.getElementById('total_operacoes').innerText = o.n_operacoes_automacao_ativada;
+//        document.getElementById('operacoes_negativas').innerText = o.n_operacoes_negativas;
+//        document.getElementById('operacoes_amortizacao').innerText = o.n_operacoes_amortizacao;
+//        document.getElementById('operacoes_lucro').innerText = o.n_operacoes_positivas;
+//        document.getElementById('lucro_final').innerText = formatarParaReais(o.resultado_liquido_final);
+//
+//        document.getElementById('total_operacoes_backtest').innerText = m.n_operacoes_automacao_ativada;
+//        document.getElementById('operacoes_negativas_backtest').innerText = m.n_operacoes_negativas;
+//        document.getElementById('operacoes_amortizacao_backtest').innerText = m.n_operacoes_amortizacao;
+//        document.getElementById('operacoes_lucro_backtest').innerText = m.n_operacoes_positivas;
+//        document.getElementById('lucro_final_backtest').innerText = formatarParaReais(m.resultado_liquido_final);
+//
+//        document.getElementById('drawdown_maximo_backtest').innerText = formatarParaReais(m.drawdown_maximo);
+//        document.getElementById('maior_lucro_acumulado_backtest').innerText = formatarParaReais(m.maior_lucro_acumulado);
+//
+//        document.getElementById('resumo_ciclo').innerText = data.resumo_ciclo || '';
+//
+//        if (data.frase_dr_drawdown) {
+//          document.getElementById('textoInsightBacktest').innerHTML = data.frase_dr_drawdown;
+//          document.getElementById('blocoInsightBacktest').classList.remove('hidden');
+//        }
+//
+//      } else {
+//        console.error('Erro no backtest:', data.mensagem || 'Erro desconhecido');
+//      }
+//    })
+//    .catch(error => console.error('❌ Erro ao rodar o backtest:', error));
+//}
+
+//// =================== 🔄 Atualizar Contratos ===================
+//function atualizarContratos() {
+//  const contratos = document.getElementById("contratosInput").value;
+//  const status = document.getElementById("contratosStatus");
+//
+//  fetch('/recalcular_fluxo_contratos', {
+//    method: 'POST',
+//    headers: { 'Content-Type': 'application/json' },
+//    body: JSON.stringify({ contratos: contratos })
+//  })
+//    .then(response => response.json())
+//    .then(data => {
+//      if (data.status === 'ok') {
+//        status.innerText = '✅ Contratos atualizados e fluxo recalculado!';
+//        setTimeout(() => location.reload(), 800);
+//      } else {
+//        status.innerText = '❌ Erro ao recalcular: ' + data.mensagem;
+//      }
+//    })
+//    .catch(err => {
+//      status.innerText = '❌ Erro de conexão.';
+//      console.error(err);
+//    });
+//}
+
+//// =================== 📊 Gráficos via API ===================
+//function atualizarGraficosInsight() {
+//  fetch('/api/graficos')
+//    .then(response => response.json())
+//    .then(data => {
+//      const g = data.graficos;
+//
+//      Plotly.react('grafico-operacoes', g.operacoes.data, g.operacoes.layout);
+//      Plotly.react('grafico-pizza-valores', g.pizza_valores.data, g.pizza_valores.layout);
+//      Plotly.react('grafico-pizza-qtde', g.pizza_qtde.data, g.pizza_qtde.layout);
+//      Plotly.react('grafico-ciclos-drawdown', g.ciclos_drawdown_lucro.data, g.ciclos_drawdown_lucro.layout);
+//      Plotly.react('grafico-divida-acumulada', g.divida.data, g.divida.layout);
+//    })
+//    .catch(err => console.error('Erro ao carregar gráficos da API:', err));
+//}
+
+//// =================== 💲 Fluxo via API ===================
+//function atualizarFluxo() {
+//  fetch('/api/fluxo')
+//    .then(response => response.json())
+//    .then(data => {
+//      const f = data.variaveis_fluxo;
+//
+//      document.getElementById('dividaAtual').innerText = formatarParaReais(f.divida_acumulada || 0);
+//      document.getElementById('valorEmprestado').innerText = formatarParaReais(f.valor_emprestado || 0);
+//      document.getElementById('amortizacao').innerText = formatarParaReais(f.amortizacao || 0);
+//      document.getElementById('lucroGerado').innerText = formatarParaReais(f.lucro_gerado || 0);
+//    })
+//    .catch(err => console.error('Erro no fluxo:', err));
+//}
+
+//// =================== 🔄 Ciclos via API ===================
+//function atualizarCiclos() {
+//  fetch('/api/ciclos')
+//    .then(response => response.json())
+//    .then(data => {
+//      console.log('Ciclos recebidos:', data);
+//      // Aqui você pode preencher uma tabela, cards ou apenas logar
+//    })
+//    .catch(err => console.error('Erro nos ciclos:', err));
+//}
+
+//// =================== 📂 Upload de Arquivo ===================
+//document.addEventListener('DOMContentLoaded', () => {
+//  const formUpload = document.getElementById('formUpload');
+//  if (formUpload) {
+//    formUpload.addEventListener('submit', function(e){
+//      e.preventDefault();
+//      const formData = new FormData(this);
+//
+//      fetch('/upload_inline', {
+//        method: 'POST',
+//        body: formData
+//      })
+//      .then(response => response.json())
+//      .then(data => {
+//          document.getElementById('statusUpload').innerText = data.mensagem;
+//          if (data.status === 'ok') {
+//              atualizarGraficosInsight();
+//              atualizarFluxo();
+//              atualizarCiclos();
+//          }
+//        })
+//      .catch(err => {
+//        document.getElementById('statusUpload').innerText = 'Erro no upload';
+//        console.error(err);
+//      });
+//    });
+//  }
+//});
+//
+//// =================== 🕒 Data e Hora ===================
+//function atualizarDataHora() {
+//  const agora = new Date();
+//  const options = {
+//    weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric',
+//    hour: '2-digit', minute: '2-digit', second: '2-digit'
+//  };
+//  document.getElementById('dataHora').innerText = agora.toLocaleString('pt-BR', options);
+//}
+//
+//setInterval(atualizarDataHora, 1000);
+//atualizarDataHora();
+//
+//// =================== 💲 Formatar Valores ===================
+//function formatarParaReais(valor) {
+//  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
+//}
+//
+//// =================== 🔔 Modal Placeholder ===================
+//const modal = document.getElementById('modalPlaceholder');
+//const modalContent = document.getElementById('modalContent');
+//const btnUpload = document.getElementById('botaoIrParaUpload');
+//
+//function abrirModalPlaceholder() {
+//  modal.classList.remove('hidden');
+//}
+//
+//function fecharModalPlaceholder() {
+//  modal.classList.add('hidden');
+//}
+//
+//if (btnUpload) {
+//  btnUpload.addEventListener('click', () => {
+//    fecharModalPlaceholder();
+//    document.getElementById('upload-dados').scrollIntoView({ behavior: 'smooth' });
+//  });
+//}
+//
+//document.addEventListener('keydown', (e) => {
+//  if (e.key === 'Escape') fecharModalPlaceholder();
+//});
+//
+//modal.addEventListener('click', (e) => {
+//  if (!modalContent.contains(e.target)) fecharModalPlaceholder();
+//});
+
+//// =================== 🎯 Eventos DOM ===================
+//document.addEventListener('DOMContentLoaded', () => {
+//  atualizarGraficosInsight();
+//  atualizarFluxo();
+//  atualizarCiclos();
+//
+//  const botaoBacktest = document.getElementById('rodarBacktest');
+//  if (botaoBacktest) botaoBacktest.addEventListener('click', rodarBacktest);
+//
+//  const contratosInput = document.getElementById("contratosInput");
+//  if (contratosInput) contratosInput.addEventListener('change', atualizarContratos);
+//});
+//</script>
+
+//document.addEventListener("DOMContentLoaded", () => {
+//  fetch('/api/variaveis_padronizacao')  // ou o endpoint que você criou
+//    .then(res => res.json())
+//    .then(data => {
+//      const contratosPadrao = data?.contratos_padronizados;
+//      if (contratosPadrao !== undefined) {
+//        const contratosSalvos = sessionStorage.getItem('contratos_desejados');
+//        const valorFinal = contratosSalvos || contratosPadrao;
+//        document.getElementById('contratosInput').value = valorFinal;
+//      }
+//    })
+//    .catch(err => {
+//      console.error("Erro ao carregar contratos padronizados:", err);
+//    });
+//});
+
+
+//document.addEventListener("DOMContentLoaded", () => {
+//  fetch('/api/variaveis_pre_padronizacao') // substitua pela rota real da sua API
+//    .then(res => res.json())
+//    .then(data => {
+//      const periodo = data?.periodo || 'Indefinido';
+//      document.getElementById('periodoPre').innerText = periodo;
+//    })
+//    .catch(error => {
+//      console.error("Erro ao buscar período:", error);
+//      document.getElementById('periodoPre').innerText = 'Erro';
+//    });
+//});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//<script>
+//// =================== 🚀 Rodar Backtest ===================
+//function rodarBacktest() {
+//  const dados = {
+//    ativacao_percentual: parseFloat(document.querySelector('[name="ativacao_percentual"]').value),
+//    ativacao_base: document.querySelector('[name="ativacao_base"]').value,
+//    comparador_ativacao: document.querySelector('[name="comparador_ativacao"]').value,
+//    pausa_percentual: parseFloat(document.querySelector('[name="pausa_percentual"]').value),
+//    pausa_base: document.querySelector('[name="pausa_base"]').value,
+//    comparador_pausa: document.querySelector('[name="comparador_pausa"]').value,
+//    desativacao_percentual: parseFloat(document.querySelector('[name="desativacao_percentual"]').value),
+//    desativacao_base: document.querySelector('[name="desativacao_base"]').value,
+//    comparador_desativacao: document.querySelector('[name="comparador_desativacao"]').value,
+//    encerrar_ao_fim_do_ciclo: document.getElementById('encerrar_ciclo').checked
+//  };
+//
+//  fetch('/rodar_backtest', {
+//    method: 'POST',
+//    headers: { 'Content-Type': 'application/json' },
+//    body: JSON.stringify(dados)
+//  })
+//    .then(response => response.json())
+//    .then(data => {
+//      if (data.status === 'ok') {
+//        const m = data.metricasback;
+//        const o = data.metricasoriginal;
+//
+//        // Estratégia Original (Coluna 1)
+//        document.getElementById('total_operacoes').innerText = o.n_operacoes_automacao_ativada;
+//        document.getElementById('operacoes_negativas').innerText = o.n_operacoes_negativas;
+//        document.getElementById('operacoes_amortizacao').innerText = o.n_operacoes_amortizacao;
+//        document.getElementById('operacoes_lucro').innerText = o.n_operacoes_positivas;
+//        document.getElementById('lucro_final').innerText = Number(o.resultado_liquido_final).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+//
+//        // Estratégia Insight Futures (Backtest - Coluna 2)
+//        document.getElementById('total_operacoes_backtest').innerText = m.n_operacoes_automacao_ativada;
+//        document.getElementById('operacoes_negativas_backtest').innerText = m.n_operacoes_negativas;
+//        document.getElementById('operacoes_amortizacao_backtest').innerText = m.n_operacoes_amortizacao;
+//        document.getElementById('operacoes_lucro_backtest').innerText = m.n_operacoes_positivas;
+//        document.getElementById('lucro_final_backtest').innerText = Number(m.resultado_liquido_final).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+//
+//        document.getElementById('drawdown_maximo_backtest').innerText = Number(m.drawdown_maximo).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+//        document.getElementById('maior_lucro_acumulado_backtest').innerText = Number(m.maior_lucro_acumulado).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+//
+//        document.getElementById('resumo_ciclo').innerText = data.resumo_ciclo || '';
+//
+//        if (data.frase_dr_drawdown) {
+//          document.getElementById('textoInsightBacktest').innerHTML = data.frase_dr_drawdown;
+//          document.getElementById('blocoInsightBacktest').classList.remove('hidden');
+//        }
+//
+//      } else {
+//        console.error('Erro no backtest:', data.mensagem || 'Erro desconhecido');
+//      }
+//    })
+//    .catch(error => console.error('❌ Erro ao rodar o backtest:', error));
+//}
+//
+//// =================== 🔄 Atualizar Contratos ===================
+//function atualizarContratos() {
+//  const contratos = document.getElementById("contratosInput").value;
+//  const status = document.getElementById("contratosStatus");
+//
+//  fetch('/recalcular_fluxo_contratos', {
+//    method: 'POST',
+//    headers: { 'Content-Type': 'application/json' },
+//    body: JSON.stringify({ contratos: contratos })
+//  })
+//    .then(response => response.json())
+//    .then(data => {
+//      if (data.status === 'ok') {
+//        status.innerText = '✅ Contratos atualizados e fluxo recalculado!';
+//        setTimeout(() => location.reload(), 800);
+//      } else {
+//        status.innerText = '❌ Erro ao recalcular: ' + data.mensagem;
+//      }
+//    })
+//    .catch(err => {
+//      status.innerText = '❌ Erro de conexão.';
+//      console.error(err);
+//    });
+//}
+//
+//// =================== 📂 Upload de Arquivo ===================
+//document.addEventListener('DOMContentLoaded', () => {
+//  const formUpload = document.getElementById('formUpload');
+//  if (formUpload) {
+//    formUpload.addEventListener('submit', function(e){
+//      e.preventDefault();
+//      const formData = new FormData(this);
+//
+//      fetch('/upload_inline', {
+//        method: 'POST',
+//        body: formData
+//      })
+//      .then(response => response.json())
+//      .then(data => {
+//          document.getElementById('statusUpload').innerText = data.mensagem;
+//            if (data.status === 'ok') {
+//                window.location.href = '/painel';  // Recarrega o painel completo após upload
+//            }
+//
+////          if (data.status === 'ok') {
+////            atualizarGraficosComNovosDados();
+////            exibirToastAtualizado();
+////          }
+//        })
+//      .catch(err => {
+//        document.getElementById('statusUpload').innerText = 'Erro no upload';
+//        console.error(err);
+//      });
+//    });
+//  }
+//});
+//
+//// =================== 📊 Gráficos Pre-Padronização ===================
+//<script>
+//  window.graficosPrePadronizacao = {
+//    'd': {{ grafico_pre_padronizacao_d | safe }},
+//    'w': {{ grafico_pre_padronizacao_w | safe }},
+//    'w2': {{ grafico_pre_padronizacao_w2 | safe }},
+//    'm': {{ grafico_pre_padronizacao_m | safe }}
+//  };
+//</script>
+//
+//
+//const container = document.getElementById("grafico-prepadronizacao-render");
+//const seletor = document.getElementById("seletor-periodo");
+//
+//function atualizarGraficoPrePadronizacao(periodo) {
+//  const grafico = window.graficosPrePadronizacao[periodo];
+//  if (grafico) {
+//    Plotly.newPlot(container, grafico.data, grafico.layout, {responsive: true});
+//  }
+//}
+//
+//seletor.addEventListener("change", (e) => {
+//  atualizarGraficoPrePadronizacao(e.target.value);
+//});
+//
+//atualizarGraficoPrePadronizacao("d");
+//
+//// =================== 🕒 Data e Hora ===================
+//function atualizarDataHora() {
+//  const agora = new Date();
+//  const options = {
+//    weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric',
+//    hour: '2-digit', minute: '2-digit', second: '2-digit'
+//  };
+//  document.getElementById('dataHora').innerText = agora.toLocaleString('pt-BR', options);
+//}
+//
+//setInterval(atualizarDataHora, 1000);
+//atualizarDataHora();
+//
+//// =================== 💲 Formatar Valores ===================
+//function formatarParaReais(valor) {
+//  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
+//}
+//
+//document.querySelectorAll('.valor-monetario').forEach(el => {
+//  const bruto = parseFloat(el.dataset.valor);
+//  el.textContent = !isNaN(bruto) ? formatarParaReais(bruto) : 'R$ 0,00';
+//});
+//
+//// =================== 📈 Gráficos ===================
+//window.graficoOperacoes = {{ grafico_operacoes_json | safe }};
+//window.graficoPizzaValores = {{ grafico_pizza_valores_json | safe }};
+//window.graficoPizzaQtde = {{ grafico_pizza_qtde_json | safe }};
+//window.graficoCiclos = {{ grafico_ciclos_drawdown_lucro_json | safe }};
+//window.graficoDivida = {{ grafico_divida | safe }};
+//
+//Plotly.newPlot('grafico-operacoes', window.graficoOperacoes.data, window.graficoOperacoes.layout, {responsive: true});
+//Plotly.newPlot('grafico-pizza-valores', window.graficoPizzaValores.data, window.graficoPizzaValores.layout, {responsive: true});
+//Plotly.newPlot('grafico-pizza-qtde', window.graficoPizzaQtde.data, window.graficoPizzaQtde.layout, {responsive: true});
+//Plotly.newPlot('grafico-ciclos-drawdown', window.graficoCiclos.data, window.graficoCiclos.layout, {responsive: true});
+//Plotly.newPlot('grafico-divida-acumulada', window.graficoDivida.data, window.graficoDivida.layout, {responsive: true});
+//
+//function atualizarGraficosComNovosDados() {
+//    fetch('/api/graficos')
+////  fetch('/get_graficos_json') // ⚙️ Precisa criar essa rota se ainda não existir
+//    .then(response => response.json())
+//    .then(data => {
+//      Plotly.react('grafico-operacoes', data.graficoOperacoes.data, data.graficoOperacoes.layout);
+//      Plotly.react('grafico-pizza-valores', data.graficoPizzaValores.data, data.graficoPizzaValores.layout);
+//      Plotly.react('grafico-pizza-qtde', data.graficoPizzaQtde.data, data.graficoPizzaQtde.layout);
+//      Plotly.react('grafico-ciclos-drawdown', data.graficoCiclos.data, data.graficoCiclos.layout);
+//      Plotly.react('grafico-divida-acumulada', data.graficoDivida.data, data.graficoDivida.layout);
+//    });
+//}
+//
+//
+//// =================== 🔔 Modal Placeholder ===================
+//const modal = document.getElementById('modalPlaceholder');
+//const modalContent = document.getElementById('modalContent');
+//const btnUpload = document.getElementById('botaoIrParaUpload');
+//
+//function abrirModalPlaceholder() {
+//  modal.classList.remove('hidden');
+//}
+//
+//function fecharModalPlaceholder() {
+//  modal.classList.add('hidden');
+//}
+//
+//if (btnUpload) {
+//  btnUpload.addEventListener('click', () => {
+//    fecharModalPlaceholder();
+//    document.getElementById('upload-dados').scrollIntoView({ behavior: 'smooth' });
+//  });
+//}
+//
+//document.addEventListener('keydown', (e) => {
+//  if (e.key === 'Escape') {
+//    fecharModalPlaceholder();
+//  }
+//});
+//
+//modal.addEventListener('click', (e) => {
+//  if (!modalContent.contains(e.target)) {
+//    fecharModalPlaceholder();
+//  }
+//});
+//
+//const exibirModalPlaceholder = {{ exibir_modal_placeholder | default(false) | tojson }};
+//if (exibirModalPlaceholder) {
+//  abrirModalPlaceholder();
+//}
+//
+//// =================== 🎯 Eventos DOM ===================
+//document.addEventListener('DOMContentLoaded', () => {
+//  // Rodar Backtest
+//  const botaoBacktest = document.getElementById('rodarBacktest');
+//  if (botaoBacktest) {
+//    botaoBacktest.addEventListener('click', rodarBacktest);
+//  }
+//
+//  // Atualizar Contratos
+//  const contratosInput = document.getElementById("contratosInput");
+//  if (contratosInput) {
+//    contratosInput.addEventListener('change', atualizarContratos);
+//  }
+//
+//  // Popup Dr. Drawdown
+//  const abrirInsight = document.getElementById("abrirInsight");
+//  const popupInsight = document.getElementById("popupInsight");
+//  const fecharPopup = document.getElementById("fecharPopup");
+//
+//  if (abrirInsight && popupInsight) {
+//    abrirInsight.addEventListener("click", () => popupInsight.classList.remove("hidden"));
+//  }
+//
+//  if (fecharPopup && popupInsight) {
+//    fecharPopup.addEventListener("click", () => popupInsight.classList.add("hidden"));
+//  }
+//});
+//</script>
+//
+//
+////
+////// =================== 🚀 Rodar Backtest ===================
+////function rodarBacktest() {
+////  const dados = {
+////    ativacao_percentual: parseFloat(document.querySelector('[name="ativacao_percentual"]').value),
+////    ativacao_base: document.querySelector('[name="ativacao_base"]').value,
+////    comparador_ativacao: document.querySelector('[name="comparador_ativacao"]').value,
+////    pausa_percentual: parseFloat(document.querySelector('[name="pausa_percentual"]').value),
+////    pausa_base: document.querySelector('[name="pausa_base"]').value,
+////    comparador_pausa: document.querySelector('[name="comparador_pausa"]').value,
+////    desativacao_percentual: parseFloat(document.querySelector('[name="desativacao_percentual"]').value),
+////    desativacao_base: document.querySelector('[name="desativacao_base"]').value,
+////    comparador_desativacao: document.querySelector('[name="comparador_desativacao"]').value,
+////    encerrar_ao_fim_do_ciclo: document.getElementById('encerrar_ciclo').checked
+////  };
+////
+////  fetch('/rodar_backtest', {
+////    method: 'POST',
+////    headers: { 'Content-Type': 'application/json' },
+////    body: JSON.stringify(dados)
+////  })
+////    .then(response => response.json())
+////    .then(data => {
+////      if (data.status === 'ok') {
+////        const m = data.metricasback;
+////        const o = data.metricasoriginal;
+////
+////        document.getElementById('total_operacoes').innerText = o.n_operacoes_automacao_ativada;
+////        document.getElementById('operacoes_negativas').innerText = o.n_operacoes_negativas;
+////        document.getElementById('operacoes_amortizacao').innerText = o.n_operacoes_amortizacao;
+////        document.getElementById('operacoes_lucro').innerText = o.n_operacoes_positivas;
+////        document.getElementById('lucro_final').innerText = formatarParaReais(o.resultado_liquido_final);
+////
+////        document.getElementById('total_operacoes_backtest').innerText = m.n_operacoes_automacao_ativada;
+////        document.getElementById('operacoes_negativas_backtest').innerText = m.n_operacoes_negativas;
+////        document.getElementById('operacoes_amortizacao_backtest').innerText = m.n_operacoes_amortizacao;
+////        document.getElementById('operacoes_lucro_backtest').innerText = m.n_operacoes_positivas;
+////        document.getElementById('lucro_final_backtest').innerText = formatarParaReais(m.resultado_liquido_final);
+////
+////        document.getElementById('drawdown_maximo_backtest').innerText = formatarParaReais(m.drawdown_maximo);
+////        document.getElementById('maior_lucro_acumulado_backtest').innerText = formatarParaReais(m.maior_lucro_acumulado);
+////
+////        document.getElementById('resumo_ciclo').innerText = data.resumo_ciclo || '';
+////
+////        if (data.frase_dr_drawdown) {
+////          document.getElementById('textoInsightBacktest').innerHTML = data.frase_dr_drawdown;
+////          document.getElementById('blocoInsightBacktest').classList.remove('hidden');
+////        }
+////      } else {
+////        console.error('Erro no backtest:', data.mensagem || 'Erro desconhecido');
+////      }
+////    })
+////    .catch(error => console.error('❌ Erro ao rodar o backtest:', error));
+////}
+////
+////// =================== 🔄 Atualizar Contratos ===================
+////function atualizarContratos() {
+////  const contratos = document.getElementById("contratosInput").value;
+////  const status = document.getElementById("contratosStatus");
+////
+////  fetch('/recalcular_fluxo_contratos', {
+////    method: 'POST',
+////    headers: { 'Content-Type': 'application/json' },
+////    body: JSON.stringify({ contratos: contratos })
+////  })
+////    .then(response => response.json())
+////    .then(data => {
+////      if (data.status === 'ok') {
+////        status.innerText = '✅ Contratos atualizados e fluxo recalculado!';
+////        setTimeout(() => location.reload(), 800);
+////      } else {
+////        status.innerText = '❌ Erro ao recalcular: ' + data.mensagem;
+////      }
+////    })
+////    .catch(err => {
+////      status.innerText = '❌ Erro de conexão.';
+////      console.error(err);
+////    });
+////}
+////
+////// =================== 📊 Gráficos ===================
+////function renderizarGraficos() {
+////  Plotly.newPlot('grafico-operacoes', window.graficoOperacoes.data, window.graficoOperacoes.layout, {responsive: true});
+////  Plotly.newPlot('grafico-pizza-valores', window.graficoPizzaValores.data, window.graficoPizzaValores.layout, {responsive: true});
+////  Plotly.newPlot('grafico-pizza-qtde', window.graficoPizzaQtde.data, window.graficoPizzaQtde.layout, {responsive: true});
+////  Plotly.newPlot('grafico-ciclos-drawdown', window.graficoCiclos.data, window.graficoCiclos.layout, {responsive: true});
+////  Plotly.newPlot('grafico-divida-acumulada', window.graficoDivida.data, window.graficoDivida.layout, {responsive: true});
+////}
+////
+////function atualizarGraficoPrePadronizacao(periodo) {
+////  const grafico = window.graficosPrePadronizacao[periodo];
+////  if (grafico) {
+////    Plotly.newPlot("grafico-prepadronizacao-render", grafico.data, grafico.layout, {responsive: true});
+////  }
+////}
+////
+////// =================== 💲 Formatar Valores ===================
+////function formatarParaReais(valor) {
+////  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
+////}
+////
+////// =================== 🔔 Modal Placeholder ===================
+////function configurarModalPlaceholder() {
+////  const modal = document.getElementById('modalPlaceholder');
+////  const modalContent = document.getElementById('modalContent');
+////  const btnUpload = document.getElementById('botaoIrParaUpload');
+////
+////  function abrirModal() { modal.classList.remove('hidden'); }
+////  function fecharModal() { modal.classList.add('hidden'); }
+////
+////  if (window.exibirModalPlaceholder) abrirModal();
+////
+////  if (btnUpload) btnUpload.addEventListener('click', () => {
+////    fecharModal();
+////    document.getElementById('upload-dados').scrollIntoView({ behavior: 'smooth' });
+////  });
+////
+////  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharModal(); });
+////  modal.addEventListener('click', (e) => { if (!modalContent.contains(e.target)) fecharModal(); });
+////}
+////
+////// =================== 🚀 Inicialização ===================
+////document.addEventListener('DOMContentLoaded', () => {
+////  renderizarGraficos();
+////  atualizarGraficoPrePadronizacao("d");
+////
+////  document.getElementById("seletor-periodo").addEventListener("change", (e) => atualizarGraficoPrePadronizacao(e.target.value));
+////
+////  document.getElementById("rodarBacktest")?.addEventListener("click", rodarBacktest);
+////  document.getElementById("contratosInput")?.addEventListener("change", atualizarContratos);
+////
+////  configurarModalPlaceholder();
+////});
+
+
+

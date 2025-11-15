@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PreBacktestSplitV1",
+  "type": "object",
+  "required": ["columns", "index", "data"],
+  "properties": {
+    "columns": { "type": "array", "items": { "type": "string" } },
+    "index":   { "type": "array", "items": {} },
+    "data":    { "type": "array", "items": { "type": "array" } }
+  },
+  "additionalProperties": false
+}

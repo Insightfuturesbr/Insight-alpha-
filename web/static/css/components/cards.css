@@ -1,0 +1,9 @@
+.card{
+  background:var(--if-surface-2); backdrop-filter:blur(var(--if-blur));
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--if-radius-2); box-shadow:var(--if-shadow);
+  transition:transform .2s, box-shadow .2s;
+}
+.card:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.card__title{font-size:var(--if-h3); color:#cbd5e1; margin-bottom:.25rem}
+.card__subtitle{font-size:.9rem; color:var(--if-muted); margin-bottom:.75rem}

@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"PadronizacaoV1",
+  "type":"object",
+  "required":[
+    "ativo","total_operacoes","contratos_padronizados","taxa_simulada_por_operacao",
+    "taxas_totais_padronizadas","resultado_bruto_padronizado","resultado_liquido_padronizado",
+    "percentual_liquido","percentual_taxas","percentual_restante"
+  ],
+  "properties":{
+    "ativo":{"type":"string"},
+    "total_operacoes":{"type":"integer","minimum":0},
+    "contratos_padronizados":{"type":"integer","minimum":0},
+    "taxa_simulada_por_operacao":{"type":"number"},
+    "taxas_totais_padronizadas":{"type":"number"},
+    "resultado_bruto_padronizado":{"type":"number"},
+    "resultado_liquido_padronizado":{"type":"number"},
+    "percentual_liquido":{"type":"number"},
+    "percentual_taxas":{"type":"number"},
+    "percentual_restante":{"type":"number"}
+  },
+  "additionalProperties": false
+}

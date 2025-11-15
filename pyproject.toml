@@ -1,0 +1,4 @@
+[tool.ruff]
+select = ["F"]  # Pyflakes — runtime-related issues like undefined names, bad calls, etc.
+fix = true
+

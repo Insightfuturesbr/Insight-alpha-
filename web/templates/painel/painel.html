@@ -1,0 +1,98 @@
+ <!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Raquel Ranheiri">
+  <title>Painel Estratégico - Insight Futures</title>
+
+  &lt;!&ndash; Estilos e Scripts &ndash;&gt;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+
+  <script src="{{ url_for('static', filename='js/graficos.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/fluxo.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/estatisticas_ciclos.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/prepadronizacao.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/padronizacao.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/painel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/ativos.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/drawdown.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/lucro.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/ciclos.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/drawdown_atual.js') }}"></script>
+
+  <style>
+    body {
+       background: linear-gradient(to right, #12002f 0%, #0a1b2f 50%, #05101f 100%);
+    }
+  </style>
+</head>
+
+<body class="text-white font-sans bg-cover bg-no-repeat bg-center min-h-screen">
+
+  &lt;!&ndash; ✅ Sidebar &ndash;&gt;
+  {% include "components/navbar_sidebar.html" %}
+
+  &lt;!&ndash; ✅ Conteúdo Principal &ndash;&gt;
+  <div class="flex pt-6">
+    <main class="flex-1 ml-20 p-6 space-y-10 bg-black/30 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/10"
+          style="background-image: url_for('static', filename='path/to/file'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      &lt;!&ndash; Dashboard &ndash;&gt;
+<div id="pagina-dashboard" class="pagina-secao hidden">
+  {% include "painel/dashboard.html" %}
+
+</div>
+
+&lt;!&ndash; Upload &ndash;&gt;
+<div id="pagina-upload" class="pagina-secao">
+  {% include "painel/upload.html" %}
+</div>
+
+&lt;!&ndash; Pré-padronização &ndash;&gt;
+<div id="pagina-prepadronizacao" class="pagina-secao hidden">
+  {% include "painel/analise_prepadronizada.html" %}
+</div>
+
+&lt;!&ndash; Padronização &ndash;&gt;
+<div id="pagina-padronizacao" class="pagina-secao hidden">
+  {% include "painel/analise_padronizada.html" %}
+</div>
+
+&lt;!&ndash; Drawdown &ndash;&gt;
+<div id="pagina-drawdown" class="pagina-secao hidden">
+  {% include "painel/analise_drawdown.html" %}
+</div>
+
+&lt;!&ndash; Backtest &ndash;&gt;
+<div id="pagina-backtest" class="pagina-secao hidden">
+  {% include "painel/parametrizacao_backtest.html" %}
+</div>
+
+&lt;!&ndash; Comparativo Insight (se usar) &ndash;&gt;
+<div id="pagina-comparativo" class="pagina-secao hidden">
+  {% include "painel/comparativo_insight.html" %}
+</div>
+
+&lt;!&ndash; Inteligência preditiva &ndash;&gt;
+<div id="pagina-modelos" class="pagina-secao hidden">
+  {% include "painel/inteligencia_preditiva.html" %}
+</div>
+
+&lt;!&ndash; Insights &ndash;&gt;
+<div id="pagina-insights" class="pagina-secao hidden">
+  {% include "painel/insights.html" %}
+</div>
+
+&lt;!&ndash; Exportações &ndash;&gt;
+<div id="pagina-exportacoes" class="pagina-secao hidden">
+  {% include "painel/exportacoes.html" %}
+</div>
+
+
+    </main>
+  </div>
+
+</body>
+</html>  -->

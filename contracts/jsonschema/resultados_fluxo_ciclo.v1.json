@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ResultadosFluxoCicloV1",
+  "type":"object",
+  "required":[
+    "emprestimo_acumulado_ciclo","amortizacao_acumulada_ciclo","lucro_acumulado_ciclo",
+    "qtd_emprestimos_ciclo","qtd_amortizacoes_ciclo","qtd_lucros_ciclo"
+  ],
+  "properties":{
+    "emprestimo_acumulado_ciclo":{"type":"number"},
+    "amortizacao_acumulada_ciclo":{"type":"number"},
+    "lucro_acumulado_ciclo":{"type":"number"},
+    "qtd_emprestimos_ciclo":{"type":"integer","minimum":0},
+    "qtd_amortizacoes_ciclo":{"type":"integer","minimum":0},
+    "qtd_lucros_ciclo":{"type":"integer","minimum":0}
+  },
+  "additionalProperties": false
+}

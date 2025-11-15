@@ -1,0 +1,12 @@
+
+
+.grafico-ciclos-drawdown-class{
+  width: 100%;
+  height: 100%;       /* base */   /* don’t exceed 80% of viewport height */
+  min-height: 300px;   /* don’t shrink smaller than 300px */
+}
+
+
+
+  
+

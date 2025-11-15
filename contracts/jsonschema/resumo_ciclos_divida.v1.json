@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ResumoCiclosDividaV1",
+  "type":"array",
+  "items":{
+    "type":"object",
+    "required":[
+      "ID Ciclo","Data Início","Data Fim","Duração do Ciclo",
+      "Máxima Dívida do Ciclo","Média Máximas Até o Ciclo","Percentil 75 Máximas Até o Ciclo"
+    ],
+    "properties":{
+      "ID Ciclo":{"type":"integer","minimum":1},
+      "Data Início":{"type":"string"},
+      "Data Fim":{"type":"string"},
+      "Duração do Ciclo":{"type":"string"},
+      "Máxima Dívida do Ciclo":{"type":"number"},
+      "Média Máximas Até o Ciclo":{"type":"number"},
+      "Percentil 75 Máximas Até o Ciclo":{"type":"number"}
+    },
+    "additionalProperties": false
+  }
+}

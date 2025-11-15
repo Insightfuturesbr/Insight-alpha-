@@ -1,0 +1,32 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ResultadosCompletosV1",
+  "type":"array",
+  "items":{
+    "type":"object",
+    "required":[
+      "ID Operação","Dívida Acumulada","Lucro Gerado",
+      "emprestimo_acumulado_ciclo","amortizacao_acumulada_ciclo","lucro_acumulado_ciclo",
+      "qtd_emprestimos_ciclo","qtd_amortizacoes_ciclo","qtd_lucros_ciclo",
+      "ciclo","Lucro Acumulado",
+      "Média das Máximas dos Lucros","Percentil 25 das Máximas dos Lucros","Posição Relativa Lucro"
+    ],
+    "properties":{
+      "ID Operação":{"type":"string"},
+      "Dívida Acumulada":{"type":"number"},
+      "Lucro Gerado":{"type":"number"},
+      "emprestimo_acumulado_ciclo":{"type":"number"},
+      "amortizacao_acumulada_ciclo":{"type":"number"},
+      "lucro_acumulado_ciclo":{"type":"number"},
+      "qtd_emprestimos_ciclo":{"type":"integer"},
+      "qtd_amortizacoes_ciclo":{"type":"integer"},
+      "qtd_lucros_ciclo":{"type":"integer"},
+      "ciclo":{"type":"string"},
+      "Lucro Acumulado":{"type":"number"},
+      "Média das Máximas dos Lucros":{"type":"number"},
+      "Percentil 25 das Máximas dos Lucros":{"type":"number"},
+      "Posição Relativa Lucro":{"type":"number"}
+    },
+    "additionalProperties": false
+  }
+}

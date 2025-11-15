@@ -1,0 +1,98 @@
+{% extends "public/base.html" %}
+
+{% block title %}Drawdown - Insight Futures{% endblock %}
+{% block page_key %}analise-drawdown{% endblock %}
+
+{% block body_wrapper %}
+<main data-page="analise-drawdown">
+<section class="container-if section" id="analise-drawdown">
+  <header class="mb-4">
+    <h2 class="text-2xl md:text-3xl font-semibold text-gradient">📊 Análise de Drawdowns</h2>
+  </header>
+
+  <div class="chart-box mb-8 drawdown-chart-container">
+    <div id="grafico-ciclos-drawdown" class="grafico-ciclos-drawdown-class"></div>
+  </div>
+
+  <header class="mb-4 mt-10">
+    <h2 class="text-2xl md:text-3xl font-semibold text-gradient">💸 Análise de Lucros</h2>
+  </header>
+
+  <div class="chart-box mb-8">
+    <div id="grafico-ciclos-lucro" class="w-full h-[500px] md:h-[600px] lg:h-[700px] max-h-[80vh] min-h-[300px]"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- 📉 Drawdown Real-Time -->
+    <div class="card p-6 text-white text-center">
+      <h3 class="card__title mb-1">📉 Drawdown Real-Time</h3>
+      <p id="drawdownAtual" class="text-2xl font-bold text-red-300">Carregando...</p>
+      <p id="destaqueFluxo" class="badge-posicional mt-2">—</p>
+
+      <div class="divider my-4"></div>
+      <div class="space-y-2 text-sm text-cyan-300 text-left">
+        <div class="flex justify-between">
+          <span>📈 Maior Amplitude Atingida no Drawdown Atual</span>
+          <span id="maximoCiclo" class="font-bold valor-monetario">—</span>
+        </div>
+        <div class="flex justify-between">
+          <span>🧮 Apenas 25% dos Drawdowns ultrapassaram</span>
+          <span id="perc25Dividas" class="font-bold">—</span>
+        </div>
+        <div class="flex justify-between">
+          <span>🧮 Média de Drawdowns na Estratégia</span>
+          <span id="mediaDividas" class="font-bold">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🕒 Duração do Drawdown -->
+    <div class="card p-6 text-center">
+      <h3 class="card__title mb-1">🕒 Duração do Drawdown Real-Time</h3>
+      <p id="duracaoAtual" class="text-2xl font-bold text-red-300">Carregando...</p>
+      <span class="inline-block mt-2 px-3 py-1 text-sm font-semibold rounded-full bg-red-800 text-red-300">
+        Dados Insuficientes
+      </span>
+
+      <div class="divider my-4"></div>
+      <div class="space-y-2 text-sm text-cyan-300 text-left">
+        <div class="flex justify-between"><span>📈 Maior Duração</span><span id="maximaDuracao" class="font-bold">—</span></div>
+        <div class="flex justify-between"><span>🧮 Média da Duração</span><span id="mediaDuracao" class="font-bold">—</span></div>
+        <div class="flex justify-between"><span>🧮 Percentil 75 da Duração</span><span id="percentil75Duracao" class="font-bold">—</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📉 Série temporal do drawdown -->
+  <div class="chart-box mt-6">
+    <h3 class="text-sm font-semibold text-gray-300 mb-2">📉 Drawdown Real-Time</h3>
+    <div id="grafico-divida-real-time" class="w-full h-[600px]"></div>
+  </div>
+
+  <!-- 💲 Fluxo Financeiro Atual -->
+  <div class="card p-6 mt-6 text-white">
+    <h2 class="card__title mb-4">💲 Fluxo Financeiro Atual</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-base">
+      <div class="bg-[#0F172A] p-4 rounded-lg shadow-md">
+        <p class="text-gray-300 text-sm mb-2">📉 Dívida Acumulada Atual:</p>
+        <p id="dividaAtual" class="text-2xl font-bold text-red-300">R$ 0,00</p>
+      </div>
+      <div class="bg-[#0F172A] p-4 rounded-lg shadow-md">
+        <p class="text-gray-300 text-sm mb-2">💸 Valor Emprestado:</p>
+        <p id="valorEmprestado" class="text-2xl font-bold text-orange-300">R$ 0,00</p>
+      </div>
+      <div class="bg-[#0F172A] p-4 rounded-lg shadow-md">
+        <p class="text-gray-300 text-sm mb-2">🔁 Amortização:</p>
+        <p id="amortizacao" class="text-2xl font-bold text-blue-300">R$ 0,00</p>
+      </div>
+      <div class="bg-[#0F172A] p-4 rounded-lg shadow-md">
+        <p class="text-gray-300 text-sm mb-2">🟢 Lucro Gerado:</p>
+        <p id="lucroGerado" class="text-2xl font-bold text-green-400">R$ 0,00</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

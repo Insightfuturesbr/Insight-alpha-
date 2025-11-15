@@ -1,0 +1,32 @@
+{
+  "total_ciclos_fechados": 48,
+  "amplitudes_declinio": {
+    "media": 369.1666666666667,
+    "p75": 545.0,
+    "max": 945.0,
+    "min": 48.0
+  },
+  "amplitudes_recuperacao": {
+    "media": 433.4791666666667,
+    "p75": 586.25,
+    "max": 994.0,
+    "min": 67.0
+  },
+  "duracoes": {
+    "declinio": {
+      "media": 3.4375,
+      "p75": 4.0,
+      "max": 29.0,
+      "min": 1.0
+    },
+    "recuperacao": {
+      "media": 3.875,
+      "p75": 5.0,
+      "max": 18.0,
+      "min": 1.0
+    }
+  },
+  "pior_drawdown": 945.0,
+  "menor_drawdown": 48.0,
+  "marcos": {}
+}

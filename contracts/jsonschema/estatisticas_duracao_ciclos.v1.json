@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"EstatisticasDuracaoCiclosV1",
+  "type":"object",
+  "required":["maxima_formatada","media_formatada","percentil_75_formatada"],
+  "properties":{
+    "maxima_formatada":{"type":"string"},
+    "media_formatada":{"type":"string"},
+    "percentil_75_formatada":{"type":"string"}
+  },
+  "additionalProperties": false
+}

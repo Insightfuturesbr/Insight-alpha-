@@ -1,0 +1,1 @@
+2025-08-23 16:04:40 | INFO | services.processing.fluxo_financeiro | Cálculo do fluxo financeiro concluído com sucesso.2025-08-23 16:04:40 | INFO | services.processing.fluxo_financeiro | Cálculo do fluxo financeiro concluído com sucesso.

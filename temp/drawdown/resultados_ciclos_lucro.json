@@ -1,0 +1,974 @@
+[
+  {
+    "ID Ciclo de Lucro": 0,
+    "Data Início": "2023-01-02 09:25:00",
+    "Data Fim": "2023-01-02 09:48:00",
+    "Duração do Ciclo": "23min",
+    "Lucro Gerado no Ciclo": 89.0,
+    "Média Lucros Até o Ciclo": 0.0,
+    "Percentil 25 Lucros Até o Ciclo": 0.0
+  },
+  {
+    "ID Ciclo de Lucro": 1,
+    "Data Início": "2023-01-02 11:02:00",
+    "Data Fim": "2023-01-02 11:05:00",
+    "Duração do Ciclo": "3min",
+    "Lucro Gerado no Ciclo": 69.0,
+    "Média Lucros Até o Ciclo": 89.0,
+    "Percentil 25 Lucros Até o Ciclo": 89.0
+  },
+  {
+    "ID Ciclo de Lucro": 2,
+    "Data Início": "2023-01-02 12:46:00",
+    "Data Fim": "2023-01-02 12:48:00",
+    "Duração do Ciclo": "2min",
+    "Lucro Gerado no Ciclo": 11.0,
+    "Média Lucros Até o Ciclo": 79.0,
+    "Percentil 25 Lucros Até o Ciclo": 74.0
+  },
+  {
+    "ID Ciclo de Lucro": 3,
+    "Data Início": "2023-01-02 14:54:00",
+    "Data Fim": "2023-01-02 15:15:00",
+    "Duração do Ciclo": "21min",
+    "Lucro Gerado no Ciclo": 95.0,
+    "Média Lucros Até o Ciclo": 56.33,
+    "Percentil 25 Lucros Até o Ciclo": 40.0
+  },
+  {
+    "ID Ciclo de Lucro": 4,
+    "Data Início": "2023-01-02 15:32:00",
+    "Data Fim": "2023-01-02 15:51:00",
+    "Duração do Ciclo": "19min",
+    "Lucro Gerado no Ciclo": 50.0,
+    "Média Lucros Até o Ciclo": 66.0,
+    "Percentil 25 Lucros Até o Ciclo": 54.5
+  },
+  {
+    "ID Ciclo de Lucro": 5,
+    "Data Início": "2023-01-02 16:53:00",
+    "Data Fim": "2023-01-03 09:29:00",
+    "Duração do Ciclo": "16h 36min",
+    "Lucro Gerado no Ciclo": 343.0,
+    "Média Lucros Até o Ciclo": 62.8,
+    "Percentil 25 Lucros Até o Ciclo": 50.0
+  },
+  {
+    "ID Ciclo de Lucro": 6,
+    "Data Início": "2023-01-03 11:05:00",
+    "Data Fim": "2023-01-03 11:05:00",
+    "Duração do Ciclo": "0min",
+    "Lucro Gerado no Ciclo": 3.0,
+    "Média Lucros Até o Ciclo": 109.5,
+    "Percentil 25 Lucros Até o Ciclo": 54.75
+  },
+  {
+    "ID Ciclo de Lucro": 7,
+    "Data Início": "2023-01-03 11:55:00",
+    "Data Fim": "2023-01-03 12:07:00",
+    "Duração do Ciclo": "12min",
+    "Lucro Gerado no Ciclo": 54.0,
+    "Média Lucros Até o Ciclo": 94.29,
+    "Percentil 25 Lucros Até o Ciclo": 30.5
+  },
+  {
+    "ID Ciclo de Lucro": 8,
+    "Data Início": "2023-01-03 12:24:00",
+    "Data Fim": "2023-01-03 12:34:00",
+    "Duração do Ciclo": "10min",
+    "Lucro Gerado no Ciclo": 75.0,
+    "Média Lucros Até o Ciclo": 89.25,
+    "Percentil 25 Lucros Até o Ciclo": 40.25
+  },
+  {
+    "ID Ciclo de Lucro": 9,
+    "Data Início": "2023-01-03 16:49:00",
+    "Data Fim": "2023-01-03 16:59:00",
+    "Duração do Ciclo": "10min",
+    "Lucro Gerado no Ciclo": 66.0,
+    "Média Lucros Até o Ciclo": 87.67,
+    "Percentil 25 Lucros Até o Ciclo": 50.0
+  },
+  {
+    "ID Ciclo de Lucro": 10,
+    "Data Início": "2023-01-04 10:08:00",
+    "Data Fim": "2023-01-04 10:21:00",
+    "Duração do Ciclo": "13min",
+    "Lucro Gerado no Ciclo": 173.0,
+    "Média Lucros Até o Ciclo": 85.5,
+    "Percentil 25 Lucros Até o Ciclo": 51.0
+  },
+  {
+    "ID Ciclo de Lucro": 11,
+    "Data Início": "2023-01-04 10:51:00",
+    "Data Fim": "2023-01-04 12:04:00",
+    "Duração do Ciclo": "1h 13min",
+    "Lucro Gerado no Ciclo": 1080.0,
+    "Média Lucros Até o Ciclo": 93.45,
+    "Percentil 25 Lucros Até o Ciclo": 52.0
+  },
+  {
+    "ID Ciclo de Lucro": 12,
+    "Data Início": "2023-01-05 12:31:00",
+    "Data Fim": "2023-01-05 14:19:00",
+    "Duração do Ciclo": "1h 48min",
+    "Lucro Gerado no Ciclo": 809.0,
+    "Média Lucros Até o Ciclo": 175.67,
+    "Percentil 25 Lucros Até o Ciclo": 53.0
+  },
+  {
+    "ID Ciclo de Lucro": 13,
+    "Data Início": "2023-01-05 14:30:00",
+    "Data Fim": "2023-01-05 14:46:00",
+    "Duração do Ciclo": "16min",
+    "Lucro Gerado no Ciclo": 60.0,
+    "Média Lucros Até o Ciclo": 224.38,
+    "Percentil 25 Lucros Até o Ciclo": 54.0
+  },
+  {
+    "ID Ciclo de Lucro": 14,
+    "Data Início": "2023-01-05 15:56:00",
+    "Data Fim": "2023-01-05 16:16:00",
+    "Duração do Ciclo": "20min",
+    "Lucro Gerado no Ciclo": 126.0,
+    "Média Lucros Até o Ciclo": 212.64,
+    "Percentil 25 Lucros Até o Ciclo": 55.5
+  },
+  {
+    "ID Ciclo de Lucro": 15,
+    "Data Início": "2023-01-05 16:29:00",
+    "Data Fim": "2023-01-05 17:30:00",
+    "Duração do Ciclo": "1h 1min",
+    "Lucro Gerado no Ciclo": 231.0,
+    "Média Lucros Até o Ciclo": 206.87,
+    "Percentil 25 Lucros Até o Ciclo": 57.0
+  },
+  {
+    "ID Ciclo de Lucro": 16,
+    "Data Início": "2023-01-06 09:01:00",
+    "Data Fim": "2023-01-06 09:39:00",
+    "Duração do Ciclo": "38min",
+    "Lucro Gerado no Ciclo": 296.0,
+    "Média Lucros Até o Ciclo": 208.38,
+    "Percentil 25 Lucros Até o Ciclo": 58.5
+  },
+  {
+    "ID Ciclo de Lucro": 17,
+    "Data Início": "2023-01-06 09:53:00",
+    "Data Fim": "2023-01-06 10:05:00",
+    "Duração do Ciclo": "12min",
+    "Lucro Gerado no Ciclo": 77.0,
+    "Média Lucros Até o Ciclo": 213.53,
+    "Percentil 25 Lucros Até o Ciclo": 60.0
+  },
+  {
+    "ID Ciclo de Lucro": 18,
+    "Data Início": "2023-01-06 10:32:00",
+    "Data Fim": "2023-01-06 10:40:00",
+    "Duração do Ciclo": "8min",
+    "Lucro Gerado no Ciclo": 164.0,
+    "Média Lucros Até o Ciclo": 205.94,
+    "Percentil 25 Lucros Até o Ciclo": 61.5
+  },
+  {
+    "ID Ciclo de Lucro": 19,
+    "Data Início": "2023-01-09 11:28:00",
+    "Data Fim": "2023-01-09 11:40:00",
+    "Duração do Ciclo": "12min",
+    "Lucro Gerado no Ciclo": 147.0,
+    "Média Lucros Até o Ciclo": 203.74,
+    "Percentil 25 Lucros Até o Ciclo": 63.0
+  },
+  {
+    "ID Ciclo de Lucro": 20,
+    "Data Início": "2023-01-10 10:56:00",
+    "Data Fim": "2023-01-10 11:32:00",
+    "Duração do Ciclo": "36min",
+    "Lucro Gerado no Ciclo": 160.0,
+    "Média Lucros Até o Ciclo": 200.9,
+    "Percentil 25 Lucros Até o Ciclo": 64.5
+  },
+  {
+    "ID Ciclo de Lucro": 21,
+    "Data Início": "2023-01-10 13:40:00",
+    "Data Fim": "2023-01-10 13:56:00",
+    "Duração do Ciclo": "16min",
+    "Lucro Gerado no Ciclo": 13.0,
+    "Média Lucros Até o Ciclo": 198.95,
+    "Percentil 25 Lucros Até o Ciclo": 66.0
+  },
+  {
+    "ID Ciclo de Lucro": 22,
+    "Data Início": "2023-01-10 14:00:00",
+    "Data Fim": "2023-01-10 14:03:00",
+    "Duração do Ciclo": "3min",
+    "Lucro Gerado no Ciclo": 24.0,
+    "Média Lucros Até o Ciclo": 190.5,
+    "Percentil 25 Lucros Até o Ciclo": 61.5
+  },
+  {
+    "ID Ciclo de Lucro": 23,
+    "Data Início": "2023-01-10 14:07:00",
+    "Data Fim": "2023-01-10 15:15:00",
+    "Duração do Ciclo": "1h 8min",
+    "Lucro Gerado no Ciclo": 371.0,
+    "Média Lucros Até o Ciclo": 183.26,
+    "Percentil 25 Lucros Até o Ciclo": 57.0
+  },
+  {
+    "ID Ciclo de Lucro": 24,
+    "Data Início": "2023-01-10 15:18:00",
+    "Data Fim": "2023-01-11 09:44:00",
+    "Duração do Ciclo": "18h 26min",
+    "Lucro Gerado no Ciclo": 621.0,
+    "Média Lucros Até o Ciclo": 191.08,
+    "Percentil 25 Lucros Até o Ciclo": 58.5
+  },
+  {
+    "ID Ciclo de Lucro": 25,
+    "Data Início": "2023-01-12 10:00:00",
+    "Data Fim": "2023-01-12 10:02:00",
+    "Duração do Ciclo": "2min",
+    "Lucro Gerado no Ciclo": 33.0,
+    "Média Lucros Até o Ciclo": 208.28,
+    "Percentil 25 Lucros Até o Ciclo": 60.0
+  },
+  {
+    "ID Ciclo de Lucro": 26,
+    "Data Início": "2023-01-12 10:15:00",
+    "Data Fim": "2023-01-12 10:49:00",
+    "Duração do Ciclo": "34min",
+    "Lucro Gerado no Ciclo": 519.0,
+    "Média Lucros Até o Ciclo": 201.54,
+    "Percentil 25 Lucros Até o Ciclo": 55.5
+  },
+  {
+    "ID Ciclo de Lucro": 27,
+    "Data Início": "2023-01-16 10:45:00",
+    "Data Fim": "2023-01-16 11:04:00",
+    "Duração do Ciclo": "19min",
+    "Lucro Gerado no Ciclo": 230.0,
+    "Média Lucros Até o Ciclo": 213.3,
+    "Percentil 25 Lucros Até o Ciclo": 57.0
+  },
+  {
+    "ID Ciclo de Lucro": 28,
+    "Data Início": "2023-01-16 13:12:00",
+    "Data Fim": "2023-01-16 13:18:00",
+    "Duração do Ciclo": "6min",
+    "Lucro Gerado no Ciclo": 35.0,
+    "Média Lucros Até o Ciclo": 213.89,
+    "Percentil 25 Lucros Até o Ciclo": 58.5
+  },
+  {
+    "ID Ciclo de Lucro": 29,
+    "Data Início": "2023-01-16 14:00:00",
+    "Data Fim": "2023-01-16 14:01:00",
+    "Duração do Ciclo": "1min",
+    "Lucro Gerado no Ciclo": 5.0,
+    "Média Lucros Até o Ciclo": 207.72,
+    "Percentil 25 Lucros Até o Ciclo": 54.0
+  },
+  {
+    "ID Ciclo de Lucro": 30,
+    "Data Início": "2023-01-17 09:13:00",
+    "Data Fim": "2023-01-17 09:47:00",
+    "Duração do Ciclo": "34min",
+    "Lucro Gerado no Ciclo": 140.0,
+    "Média Lucros Até o Ciclo": 200.97,
+    "Percentil 25 Lucros Até o Ciclo": 51.0
+  },
+  {
+    "ID Ciclo de Lucro": 31,
+    "Data Início": "2023-01-17 12:24:00",
+    "Data Fim": "2023-01-17 12:26:00",
+    "Duração do Ciclo": "2min",
+    "Lucro Gerado no Ciclo": 16.0,
+    "Média Lucros Até o Ciclo": 199.0,
+    "Percentil 25 Lucros Até o Ciclo": 52.0
+  },
+  {
+    "ID Ciclo de Lucro": 32,
+    "Data Início": "2023-01-17 12:38:00",
+    "Data Fim": "2023-01-17 13:02:00",
+    "Duração do Ciclo": "24min",
+    "Lucro Gerado no Ciclo": 13.0,
+    "Média Lucros Até o Ciclo": 193.28,
+    "Percentil 25 Lucros Até o Ciclo": 46.25
+  },
+  {
+    "ID Ciclo de Lucro": 33,
+    "Data Início": "2023-01-17 14:46:00",
+    "Data Fim": "2023-01-17 14:57:00",
+    "Duração do Ciclo": "11min",
+    "Lucro Gerado no Ciclo": 62.0,
+    "Média Lucros Até o Ciclo": 187.82,
+    "Percentil 25 Lucros Até o Ciclo": 35.0
+  },
+  {
+    "ID Ciclo de Lucro": 34,
+    "Data Início": "2023-01-17 15:11:00",
+    "Data Fim": "2023-01-17 15:38:00",
+    "Duração do Ciclo": "27min",
+    "Lucro Gerado no Ciclo": 155.0,
+    "Média Lucros Até o Ciclo": 184.12,
+    "Percentil 25 Lucros Até o Ciclo": 38.75
+  },
+  {
+    "ID Ciclo de Lucro": 35,
+    "Data Início": "2023-01-17 15:55:00",
+    "Data Fim": "2023-01-17 16:11:00",
+    "Duração do Ciclo": "16min",
+    "Lucro Gerado no Ciclo": 57.0,
+    "Média Lucros Até o Ciclo": 183.29,
+    "Percentil 25 Lucros Até o Ciclo": 42.5
+  },
+  {
+    "ID Ciclo de Lucro": 36,
+    "Data Início": "2023-01-17 17:30:00",
+    "Data Fim": "2023-01-18 09:05:00",
+    "Duração do Ciclo": "15h 35min",
+    "Lucro Gerado no Ciclo": 42.0,
+    "Média Lucros Até o Ciclo": 179.78,
+    "Percentil 25 Lucros Até o Ciclo": 46.25
+  },
+  {
+    "ID Ciclo de Lucro": 37,
+    "Data Início": "2023-01-18 11:12:00",
+    "Data Fim": "2023-01-18 11:15:00",
+    "Duração do Ciclo": "3min",
+    "Lucro Gerado no Ciclo": 12.0,
+    "Média Lucros Até o Ciclo": 176.05,
+    "Percentil 25 Lucros Até o Ciclo": 42.0
+  },
+  {
+    "ID Ciclo de Lucro": 38,
+    "Data Início": "2023-01-18 11:23:00",
+    "Data Fim": "2023-01-18 11:35:00",
+    "Duração do Ciclo": "12min",
+    "Lucro Gerado no Ciclo": 281.0,
+    "Média Lucros Até o Ciclo": 171.74,
+    "Percentil 25 Lucros Até o Ciclo": 36.75
+  },
+  {
+    "ID Ciclo de Lucro": 39,
+    "Data Início": "2023-01-20 15:21:00",
+    "Data Fim": "2023-01-20 15:30:00",
+    "Duração do Ciclo": "9min",
+    "Lucro Gerado no Ciclo": 38.0,
+    "Média Lucros Até o Ciclo": 174.54,
+    "Percentil 25 Lucros Até o Ciclo": 38.5
+  },
+  {
+    "ID Ciclo de Lucro": 40,
+    "Data Início": "2023-01-20 17:16:00",
+    "Data Fim": "2023-01-20 17:25:00",
+    "Duração do Ciclo": "9min",
+    "Lucro Gerado no Ciclo": 31.0,
+    "Média Lucros Até o Ciclo": 171.12,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 41,
+    "Data Início": "2023-01-20 17:35:00",
+    "Data Fim": "2023-01-23 10:02:00",
+    "Duração do Ciclo": "2d 16h 27min",
+    "Lucro Gerado no Ciclo": 102.0,
+    "Média Lucros Até o Ciclo": 167.71,
+    "Percentil 25 Lucros Até o Ciclo": 35.0
+  },
+  {
+    "ID Ciclo de Lucro": 42,
+    "Data Início": "2023-01-23 12:03:00",
+    "Data Fim": "2023-01-23 12:43:00",
+    "Duração do Ciclo": "40min",
+    "Lucro Gerado no Ciclo": 287.0,
+    "Média Lucros Até o Ciclo": 166.14,
+    "Percentil 25 Lucros Até o Ciclo": 35.75
+  },
+  {
+    "ID Ciclo de Lucro": 43,
+    "Data Início": "2023-01-23 12:53:00",
+    "Data Fim": "2023-01-23 13:34:00",
+    "Duração do Ciclo": "41min",
+    "Lucro Gerado no Ciclo": 318.0,
+    "Média Lucros Até o Ciclo": 168.95,
+    "Percentil 25 Lucros Até o Ciclo": 36.5
+  },
+  {
+    "ID Ciclo de Lucro": 44,
+    "Data Início": "2023-01-23 15:22:00",
+    "Data Fim": "2023-01-23 15:23:00",
+    "Duração do Ciclo": "1min",
+    "Lucro Gerado no Ciclo": 32.0,
+    "Média Lucros Até o Ciclo": 172.34,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 45,
+    "Data Início": "2023-01-23 15:47:00",
+    "Data Fim": "2023-01-23 15:51:00",
+    "Duração do Ciclo": "4min",
+    "Lucro Gerado no Ciclo": 3.0,
+    "Média Lucros Até o Ciclo": 169.22,
+    "Percentil 25 Lucros Até o Ciclo": 35.0
+  },
+  {
+    "ID Ciclo de Lucro": 46,
+    "Data Início": "2023-01-23 16:22:00",
+    "Data Fim": "2023-01-23 16:46:00",
+    "Duração do Ciclo": "24min",
+    "Lucro Gerado no Ciclo": 194.0,
+    "Média Lucros Até o Ciclo": 165.61,
+    "Percentil 25 Lucros Até o Ciclo": 33.5
+  },
+  {
+    "ID Ciclo de Lucro": 47,
+    "Data Início": "2023-01-26 10:55:00",
+    "Data Fim": "2023-01-26 10:58:00",
+    "Duração do Ciclo": "3min",
+    "Lucro Gerado no Ciclo": 82.0,
+    "Média Lucros Até o Ciclo": 166.21,
+    "Percentil 25 Lucros Até o Ciclo": 34.0
+  },
+  {
+    "ID Ciclo de Lucro": 48,
+    "Data Início": "2023-01-26 11:13:00",
+    "Data Fim": "2023-01-26 11:33:00",
+    "Duração do Ciclo": "20min",
+    "Lucro Gerado no Ciclo": 6.0,
+    "Média Lucros Até o Ciclo": 164.46,
+    "Percentil 25 Lucros Até o Ciclo": 34.5
+  },
+  {
+    "ID Ciclo de Lucro": 49,
+    "Data Início": "2023-01-26 11:58:00",
+    "Data Fim": "2023-01-26 12:20:00",
+    "Duração do Ciclo": "22min",
+    "Lucro Gerado no Ciclo": 8.0,
+    "Média Lucros Até o Ciclo": 161.22,
+    "Percentil 25 Lucros Até o Ciclo": 33.0
+  },
+  {
+    "ID Ciclo de Lucro": 50,
+    "Data Início": "2023-01-26 12:46:00",
+    "Data Fim": "2023-01-26 12:54:00",
+    "Duração do Ciclo": "8min",
+    "Lucro Gerado no Ciclo": 82.0,
+    "Média Lucros Até o Ciclo": 158.16,
+    "Percentil 25 Lucros Até o Ciclo": 32.25
+  },
+  {
+    "ID Ciclo de Lucro": 51,
+    "Data Início": "2023-01-26 13:59:00",
+    "Data Fim": "2023-01-26 14:15:00",
+    "Duração do Ciclo": "16min",
+    "Lucro Gerado no Ciclo": 77.0,
+    "Média Lucros Até o Ciclo": 156.67,
+    "Percentil 25 Lucros Até o Ciclo": 32.5
+  },
+  {
+    "ID Ciclo de Lucro": 52,
+    "Data Início": "2023-01-26 17:05:00",
+    "Data Fim": "2023-01-26 17:31:00",
+    "Duração do Ciclo": "26min",
+    "Lucro Gerado no Ciclo": 61.0,
+    "Média Lucros Até o Ciclo": 155.13,
+    "Percentil 25 Lucros Até o Ciclo": 32.75
+  },
+  {
+    "ID Ciclo de Lucro": 53,
+    "Data Início": "2023-01-27 10:00:00",
+    "Data Fim": "2023-01-27 10:10:00",
+    "Duração do Ciclo": "10min",
+    "Lucro Gerado no Ciclo": 187.0,
+    "Média Lucros Até o Ciclo": 153.36,
+    "Percentil 25 Lucros Até o Ciclo": 33.0
+  },
+  {
+    "ID Ciclo de Lucro": 54,
+    "Data Início": "2023-01-27 10:28:00",
+    "Data Fim": "2023-01-27 11:00:00",
+    "Duração do Ciclo": "32min",
+    "Lucro Gerado no Ciclo": 251.0,
+    "Média Lucros Até o Ciclo": 153.98,
+    "Percentil 25 Lucros Até o Ciclo": 33.5
+  },
+  {
+    "ID Ciclo de Lucro": 55,
+    "Data Início": "2023-01-30 11:34:00",
+    "Data Fim": "2023-01-30 11:38:00",
+    "Duração do Ciclo": "4min",
+    "Lucro Gerado no Ciclo": 67.0,
+    "Média Lucros Até o Ciclo": 155.75,
+    "Percentil 25 Lucros Até o Ciclo": 34.0
+  },
+  {
+    "ID Ciclo de Lucro": 56,
+    "Data Início": "2023-01-30 13:29:00",
+    "Data Fim": "2023-01-30 15:11:00",
+    "Duração do Ciclo": "1h 42min",
+    "Lucro Gerado no Ciclo": 503.0,
+    "Média Lucros Até o Ciclo": 154.16,
+    "Percentil 25 Lucros Até o Ciclo": 34.5
+  },
+  {
+    "ID Ciclo de Lucro": 57,
+    "Data Início": "2023-01-30 16:26:00",
+    "Data Fim": "2023-01-30 16:44:00",
+    "Duração do Ciclo": "18min",
+    "Lucro Gerado no Ciclo": 131.0,
+    "Média Lucros Até o Ciclo": 160.28,
+    "Percentil 25 Lucros Até o Ciclo": 35.0
+  },
+  {
+    "ID Ciclo de Lucro": 58,
+    "Data Início": "2023-01-31 15:28:00",
+    "Data Fim": "2023-01-31 16:15:00",
+    "Duração do Ciclo": "47min",
+    "Lucro Gerado no Ciclo": 127.0,
+    "Média Lucros Até o Ciclo": 159.78,
+    "Percentil 25 Lucros Até o Ciclo": 35.75
+  },
+  {
+    "ID Ciclo de Lucro": 59,
+    "Data Início": "2023-01-31 17:01:00",
+    "Data Fim": "2023-01-31 17:38:00",
+    "Duração do Ciclo": "37min",
+    "Lucro Gerado no Ciclo": 50.0,
+    "Média Lucros Até o Ciclo": 159.22,
+    "Percentil 25 Lucros Até o Ciclo": 36.5
+  },
+  {
+    "ID Ciclo de Lucro": 60,
+    "Data Início": "2023-02-01 09:04:00",
+    "Data Fim": "2023-02-01 09:39:00",
+    "Duração do Ciclo": "35min",
+    "Lucro Gerado no Ciclo": 152.0,
+    "Média Lucros Até o Ciclo": 157.4,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 61,
+    "Data Início": "2023-02-01 10:04:00",
+    "Data Fim": "2023-02-01 10:08:00",
+    "Duração do Ciclo": "4min",
+    "Lucro Gerado no Ciclo": 29.0,
+    "Média Lucros Até o Ciclo": 157.31,
+    "Percentil 25 Lucros Até o Ciclo": 38.0
+  },
+  {
+    "ID Ciclo de Lucro": 62,
+    "Data Início": "2023-02-01 10:18:00",
+    "Data Fim": "2023-02-01 10:23:00",
+    "Duração do Ciclo": "5min",
+    "Lucro Gerado no Ciclo": 48.0,
+    "Média Lucros Até o Ciclo": 155.24,
+    "Percentil 25 Lucros Até o Ciclo": 35.75
+  },
+  {
+    "ID Ciclo de Lucro": 63,
+    "Data Início": "2023-02-06 13:12:00",
+    "Data Fim": "2023-02-06 15:00:00",
+    "Duração do Ciclo": "1h 48min",
+    "Lucro Gerado no Ciclo": 684.0,
+    "Média Lucros Até o Ciclo": 153.54,
+    "Percentil 25 Lucros Até o Ciclo": 36.5
+  },
+  {
+    "ID Ciclo de Lucro": 64,
+    "Data Início": "2023-02-06 16:36:00",
+    "Data Fim": "2023-02-06 16:48:00",
+    "Duração do Ciclo": "12min",
+    "Lucro Gerado no Ciclo": 47.0,
+    "Média Lucros Até o Ciclo": 161.83,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 65,
+    "Data Início": "2023-02-07 10:12:00",
+    "Data Fim": "2023-02-07 11:45:00",
+    "Duração do Ciclo": "1h 33min",
+    "Lucro Gerado no Ciclo": 376.0,
+    "Média Lucros Até o Ciclo": 160.06,
+    "Percentil 25 Lucros Até o Ciclo": 38.0
+  },
+  {
+    "ID Ciclo de Lucro": 66,
+    "Data Início": "2023-02-07 13:57:00",
+    "Data Fim": "2023-02-07 14:14:00",
+    "Duração do Ciclo": "17min",
+    "Lucro Gerado no Ciclo": 52.0,
+    "Média Lucros Até o Ciclo": 163.33,
+    "Percentil 25 Lucros Até o Ciclo": 39.0
+  },
+  {
+    "ID Ciclo de Lucro": 67,
+    "Data Início": "2023-02-07 14:19:00",
+    "Data Fim": "2023-02-07 14:26:00",
+    "Duração do Ciclo": "7min",
+    "Lucro Gerado no Ciclo": 28.0,
+    "Média Lucros Até o Ciclo": 161.67,
+    "Percentil 25 Lucros Até o Ciclo": 40.0
+  },
+  {
+    "ID Ciclo de Lucro": 68,
+    "Data Início": "2023-02-09 11:10:00",
+    "Data Fim": "2023-02-09 11:18:00",
+    "Duração do Ciclo": "8min",
+    "Lucro Gerado no Ciclo": 91.0,
+    "Média Lucros Até o Ciclo": 159.71,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 69,
+    "Data Início": "2023-02-10 13:46:00",
+    "Data Fim": "2023-02-10 13:58:00",
+    "Duração do Ciclo": "12min",
+    "Lucro Gerado no Ciclo": 66.0,
+    "Média Lucros Até o Ciclo": 158.71,
+    "Percentil 25 Lucros Até o Ciclo": 38.0
+  },
+  {
+    "ID Ciclo de Lucro": 70,
+    "Data Início": "2023-02-10 14:51:00",
+    "Data Fim": "2023-02-10 15:14:00",
+    "Duração do Ciclo": "23min",
+    "Lucro Gerado no Ciclo": 134.0,
+    "Média Lucros Até o Ciclo": 157.39,
+    "Percentil 25 Lucros Até o Ciclo": 39.0
+  },
+  {
+    "ID Ciclo de Lucro": 71,
+    "Data Início": "2023-02-13 10:30:00",
+    "Data Fim": "2023-02-13 10:36:00",
+    "Duração do Ciclo": "6min",
+    "Lucro Gerado no Ciclo": 1.0,
+    "Média Lucros Até o Ciclo": 157.06,
+    "Percentil 25 Lucros Até o Ciclo": 40.0
+  },
+  {
+    "ID Ciclo de Lucro": 72,
+    "Data Início": "2023-02-13 10:45:00",
+    "Data Fim": "2023-02-13 11:12:00",
+    "Duração do Ciclo": "27min",
+    "Lucro Gerado no Ciclo": 149.0,
+    "Média Lucros Até o Ciclo": 154.89,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 73,
+    "Data Início": "2023-02-17 10:47:00",
+    "Data Fim": "2023-02-17 11:04:00",
+    "Duração do Ciclo": "17min",
+    "Lucro Gerado no Ciclo": 299.0,
+    "Média Lucros Até o Ciclo": 154.81,
+    "Percentil 25 Lucros Até o Ciclo": 38.0
+  },
+  {
+    "ID Ciclo de Lucro": 74,
+    "Data Início": "2023-02-17 11:18:00",
+    "Data Fim": "2023-02-17 11:42:00",
+    "Duração do Ciclo": "24min",
+    "Lucro Gerado no Ciclo": 50.0,
+    "Média Lucros Até o Ciclo": 156.76,
+    "Percentil 25 Lucros Até o Ciclo": 39.0
+  },
+  {
+    "ID Ciclo de Lucro": 75,
+    "Data Início": "2023-02-17 12:03:00",
+    "Data Fim": "2023-02-17 12:03:00",
+    "Duração do Ciclo": "0min",
+    "Lucro Gerado no Ciclo": 3.0,
+    "Média Lucros Até o Ciclo": 155.33,
+    "Percentil 25 Lucros Até o Ciclo": 40.0
+  },
+  {
+    "ID Ciclo de Lucro": 76,
+    "Data Início": "2023-02-17 12:07:00",
+    "Data Fim": "2023-02-17 13:34:00",
+    "Duração do Ciclo": "1h 27min",
+    "Lucro Gerado no Ciclo": 258.0,
+    "Média Lucros Até o Ciclo": 153.33,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 77,
+    "Data Início": "2023-02-17 14:49:00",
+    "Data Fim": "2023-02-17 14:52:00",
+    "Duração do Ciclo": "3min",
+    "Lucro Gerado no Ciclo": 1.0,
+    "Média Lucros Até o Ciclo": 154.69,
+    "Percentil 25 Lucros Até o Ciclo": 38.0
+  },
+  {
+    "ID Ciclo de Lucro": 78,
+    "Data Início": "2023-02-17 15:09:00",
+    "Data Fim": "2023-02-17 15:24:00",
+    "Duração do Ciclo": "15min",
+    "Lucro Gerado no Ciclo": 109.0,
+    "Média Lucros Até o Ciclo": 152.72,
+    "Percentil 25 Lucros Até o Ciclo": 35.75
+  },
+  {
+    "ID Ciclo de Lucro": 79,
+    "Data Início": "2023-02-17 15:50:00",
+    "Data Fim": "2023-02-17 16:16:00",
+    "Duração do Ciclo": "26min",
+    "Lucro Gerado no Ciclo": 216.0,
+    "Média Lucros Até o Ciclo": 152.16,
+    "Percentil 25 Lucros Até o Ciclo": 36.5
+  },
+  {
+    "ID Ciclo de Lucro": 80,
+    "Data Início": "2023-02-17 16:50:00",
+    "Data Fim": "2023-02-17 16:59:00",
+    "Duração do Ciclo": "9min",
+    "Lucro Gerado no Ciclo": 59.0,
+    "Média Lucros Até o Ciclo": 152.96,
+    "Percentil 25 Lucros Até o Ciclo": 37.25
+  },
+  {
+    "ID Ciclo de Lucro": 81,
+    "Data Início": "2023-02-17 17:06:00",
+    "Data Fim": "2023-02-17 17:10:00",
+    "Duração do Ciclo": "4min",
+    "Lucro Gerado no Ciclo": 50.0,
+    "Média Lucros Até o Ciclo": 151.8,
+    "Percentil 25 Lucros Até o Ciclo": 38.0
+  },
+  {
+    "ID Ciclo de Lucro": 82,
+    "Data Início": "2023-02-22 14:02:00",
+    "Data Fim": "2023-02-22 14:52:00",
+    "Duração do Ciclo": "50min",
+    "Lucro Gerado no Ciclo": 316.0,
+    "Média Lucros Até o Ciclo": 150.56,
+    "Percentil 25 Lucros Até o Ciclo": 39.0
+  },
+  {
+    "ID Ciclo de Lucro": 83,
+    "Data Início": "2023-02-22 15:20:00",
+    "Data Fim": "2023-02-22 15:29:00",
+    "Duração do Ciclo": "9min",
+    "Lucro Gerado no Ciclo": 77.0,
+    "Média Lucros Até o Ciclo": 152.55,
+    "Percentil 25 Lucros Até o Ciclo": 40.0
+  },
+  {
+    "ID Ciclo de Lucro": 84,
+    "Data Início": "2023-02-22 15:42:00",
+    "Data Fim": "2023-02-22 16:04:00",
+    "Duração do Ciclo": "22min",
+    "Lucro Gerado no Ciclo": 109.0,
+    "Média Lucros Até o Ciclo": 151.65,
+    "Percentil 25 Lucros Até o Ciclo": 41.0
+  },
+  {
+    "ID Ciclo de Lucro": 85,
+    "Data Início": "2023-02-22 16:35:00",
+    "Data Fim": "2023-02-22 16:48:00",
+    "Duração do Ciclo": "13min",
+    "Lucro Gerado no Ciclo": 52.0,
+    "Média Lucros Até o Ciclo": 151.15,
+    "Percentil 25 Lucros Até o Ciclo": 42.0
+  },
+  {
+    "ID Ciclo de Lucro": 86,
+    "Data Início": "2023-02-22 17:27:00",
+    "Data Fim": "2023-03-01 09:30:00",
+    "Duração do Ciclo": "6d 16h 3min",
+    "Lucro Gerado no Ciclo": 240.0,
+    "Média Lucros Até o Ciclo": 150.0,
+    "Percentil 25 Lucros Até o Ciclo": 43.25
+  },
+  {
+    "ID Ciclo de Lucro": 87,
+    "Data Início": "2023-03-01 09:48:00",
+    "Data Fim": "2023-03-01 10:10:00",
+    "Duração do Ciclo": "22min",
+    "Lucro Gerado no Ciclo": 181.0,
+    "Média Lucros Até o Ciclo": 151.03,
+    "Percentil 25 Lucros Até o Ciclo": 44.5
+  },
+  {
+    "ID Ciclo de Lucro": 88,
+    "Data Início": "2023-03-13 11:07:00",
+    "Data Fim": "2023-03-13 11:31:00",
+    "Duração do Ciclo": "24min",
+    "Lucro Gerado no Ciclo": 40.0,
+    "Média Lucros Até o Ciclo": 151.38,
+    "Percentil 25 Lucros Até o Ciclo": 45.75
+  },
+  {
+    "ID Ciclo de Lucro": 89,
+    "Data Início": "2023-03-14 11:15:00",
+    "Data Fim": "2023-03-14 11:57:00",
+    "Duração do Ciclo": "42min",
+    "Lucro Gerado no Ciclo": 220.0,
+    "Média Lucros Até o Ciclo": 150.12,
+    "Percentil 25 Lucros Até o Ciclo": 42.0
+  },
+  {
+    "ID Ciclo de Lucro": 90,
+    "Data Início": "2023-03-14 12:32:00",
+    "Data Fim": "2023-03-14 13:24:00",
+    "Duração do Ciclo": "52min",
+    "Lucro Gerado no Ciclo": 338.0,
+    "Média Lucros Até o Ciclo": 150.9,
+    "Percentil 25 Lucros Até o Ciclo": 43.25
+  },
+  {
+    "ID Ciclo de Lucro": 91,
+    "Data Início": "2023-03-14 16:18:00",
+    "Data Fim": "2023-03-14 16:30:00",
+    "Duração do Ciclo": "12min",
+    "Lucro Gerado no Ciclo": 8.0,
+    "Média Lucros Até o Ciclo": 152.96,
+    "Percentil 25 Lucros Até o Ciclo": 44.5
+  },
+  {
+    "ID Ciclo de Lucro": 92,
+    "Data Início": "2023-03-14 16:56:00",
+    "Data Fim": "2023-03-15 09:40:00",
+    "Duração do Ciclo": "16h 44min",
+    "Lucro Gerado no Ciclo": 123.0,
+    "Média Lucros Até o Ciclo": 151.38,
+    "Percentil 25 Lucros Até o Ciclo": 41.5
+  },
+  {
+    "ID Ciclo de Lucro": 93,
+    "Data Início": "2023-03-15 10:03:00",
+    "Data Fim": "2023-03-15 10:28:00",
+    "Duração do Ciclo": "25min",
+    "Lucro Gerado no Ciclo": 239.0,
+    "Média Lucros Até o Ciclo": 151.08,
+    "Percentil 25 Lucros Até o Ciclo": 42.0
+  },
+  {
+    "ID Ciclo de Lucro": 94,
+    "Data Início": "2023-03-16 09:05:00",
+    "Data Fim": "2023-03-16 09:34:00",
+    "Duração do Ciclo": "29min",
+    "Lucro Gerado no Ciclo": 125.0,
+    "Média Lucros Até o Ciclo": 152.01,
+    "Percentil 25 Lucros Até o Ciclo": 43.25
+  },
+  {
+    "ID Ciclo de Lucro": 95,
+    "Data Início": "2023-03-16 09:52:00",
+    "Data Fim": "2023-03-16 10:01:00",
+    "Duração do Ciclo": "9min",
+    "Lucro Gerado no Ciclo": 23.0,
+    "Média Lucros Até o Ciclo": 151.73,
+    "Percentil 25 Lucros Até o Ciclo": 44.5
+  },
+  {
+    "ID Ciclo de Lucro": 96,
+    "Data Início": "2023-03-21 11:10:00",
+    "Data Fim": "2023-03-21 11:18:00",
+    "Duração do Ciclo": "8min",
+    "Lucro Gerado no Ciclo": 14.0,
+    "Média Lucros Até o Ciclo": 150.39,
+    "Percentil 25 Lucros Até o Ciclo": 41.5
+  },
+  {
+    "ID Ciclo de Lucro": 97,
+    "Data Início": "2023-03-21 11:30:00",
+    "Data Fim": "2023-03-21 12:28:00",
+    "Duração do Ciclo": "58min",
+    "Lucro Gerado no Ciclo": 346.0,
+    "Média Lucros Até o Ciclo": 148.98,
+    "Percentil 25 Lucros Até o Ciclo": 40.0
+  },
+  {
+    "ID Ciclo de Lucro": 98,
+    "Data Início": "2023-03-21 13:23:00",
+    "Data Fim": "2023-03-21 13:44:00",
+    "Duração do Ciclo": "21min",
+    "Lucro Gerado no Ciclo": 46.0,
+    "Média Lucros Até o Ciclo": 150.99,
+    "Percentil 25 Lucros Até o Ciclo": 40.5
+  },
+  {
+    "ID Ciclo de Lucro": 99,
+    "Data Início": "2023-03-21 14:03:00",
+    "Data Fim": "2023-03-21 14:23:00",
+    "Duração do Ciclo": "20min",
+    "Lucro Gerado no Ciclo": 91.0,
+    "Média Lucros Até o Ciclo": 149.93,
+    "Percentil 25 Lucros Até o Ciclo": 41.0
+  },
+  {
+    "ID Ciclo de Lucro": 100,
+    "Data Início": "2023-03-21 14:36:00",
+    "Data Fim": "2023-03-21 15:00:00",
+    "Duração do Ciclo": "24min",
+    "Lucro Gerado no Ciclo": 106.0,
+    "Média Lucros Até o Ciclo": 149.34,
+    "Percentil 25 Lucros Até o Ciclo": 41.5
+  },
+  {
+    "ID Ciclo de Lucro": 101,
+    "Data Início": "2023-03-21 15:15:00",
+    "Data Fim": "2023-03-21 15:30:00",
+    "Duração do Ciclo": "15min",
+    "Lucro Gerado no Ciclo": 30.0,
+    "Média Lucros Até o Ciclo": 148.91,
+    "Percentil 25 Lucros Até o Ciclo": 42.0
+  },
+  {
+    "ID Ciclo de Lucro": 102,
+    "Data Início": "2023-03-21 16:54:00",
+    "Data Fim": "2023-03-21 17:15:00",
+    "Duração do Ciclo": "21min",
+    "Lucro Gerado no Ciclo": 165.0,
+    "Média Lucros Até o Ciclo": 147.75,
+    "Percentil 25 Lucros Até o Ciclo": 40.5
+  },
+  {
+    "ID Ciclo de Lucro": 103,
+    "Data Início": "2023-03-22 09:38:00",
+    "Data Fim": "2023-03-22 10:03:00",
+    "Duração do Ciclo": "25min",
+    "Lucro Gerado no Ciclo": 112.0,
+    "Média Lucros Até o Ciclo": 147.91,
+    "Percentil 25 Lucros Até o Ciclo": 41.0
+  },
+  {
+    "ID Ciclo de Lucro": 104,
+    "Data Início": "2023-03-22 10:14:00",
+    "Data Fim": "2023-03-22 10:27:00",
+    "Duração do Ciclo": "13min",
+    "Lucro Gerado no Ciclo": 80.0,
+    "Média Lucros Até o Ciclo": 147.57,
+    "Percentil 25 Lucros Até o Ciclo": 41.5
+  },
+  {
+    "ID Ciclo de Lucro": 105,
+    "Data Início": "2023-03-22 10:58:00",
+    "Data Fim": "2023-03-22 11:27:00",
+    "Duração do Ciclo": "29min",
+    "Lucro Gerado no Ciclo": 87.0,
+    "Média Lucros Até o Ciclo": 146.92,
+    "Percentil 25 Lucros Até o Ciclo": 42.0
+  },
+  {
+    "ID Ciclo de Lucro": 106,
+    "Data Início": "2023-03-22 11:39:00",
+    "Data Fim": "2023-03-22 12:09:00",
+    "Duração do Ciclo": "30min",
+    "Lucro Gerado no Ciclo": 257.0,
+    "Média Lucros Até o Ciclo": 146.36,
+    "Percentil 25 Lucros Até o Ciclo": 43.0
+  },
+  {
+    "ID Ciclo de Lucro": 107,
+    "Data Início": "2023-03-22 13:22:00",
+    "Data Fim": "2023-03-22 13:55:00",
+    "Duração do Ciclo": "33min",
+    "Lucro Gerado no Ciclo": 116.0,
+    "Média Lucros Até o Ciclo": 147.39,
+    "Percentil 25 Lucros Até o Ciclo": 44.0
+  }
+]

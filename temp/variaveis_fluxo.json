@@ -1,0 +1,20 @@
+{
+  "caixa_liquido_atual": 14961.0,
+  "divida_acumulada": -926.0,
+  "valor_emprestado": -113136.0,
+  "amortizacao": 112210.0,
+  "lucro_gerado": 15887.0,
+  "total_taxas_simuladas": 12489.0,
+  "maxima_divida": -2360.0,
+  "media_das_maximas_dividas": -301.49,
+  "perc25_das_maximas_dividas": -308.0,
+  "posicao_relativa_final": 3.01,
+  "destaque": "Dentro, Acima do Percentil",
+  "qtde_emprestado": 987,
+  "qtde_amortizacao": 2798,
+  "qtde_lucro": 480,
+  "total_linhas": 4163,
+  "perc_emprestado": 23.71,
+  "perc_amortizacao": 67.21,
+  "perc_lucro": 11.53
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Insight Futures{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12" defer></script>
+
+
+  <!-- CSS próprios -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/sidebar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/cards.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/components/charts.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/utilities.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/overrides.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/drawdown_lucros_override.css') }}">
+  
+
+  {% block head_extra %}{% endblock %}
+</head>
+<body class="text-white font-sans">
+  {% include "components/navbar_sidebar.html" %}
+
+  <!-- 👇 ADICIONE id e data-page no main -->
+  <main id="app"
+        class="main-with-sidebar container-if section"
+        data-page="{% block page_key %}{% endblock %}">
+    {% block body_wrapper %}
+      <div class="panel-card">
+        {% block body %}{% endblock %}
+      </div>
+    {% endblock %}
+  </main>
+
+  <script>window.STATIC_BASE="{{ url_for('static', filename='') }}";</script>
+
+  <!-- libs -->
+  <script defer src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+
+  <!-- módulos compartilhados/página -->
+  <script defer src="{{ url_for('static', filename='js/graficos.js') }}"></script>
+
+  <!-- loader/roteador central -->
+  <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+  
+  {% block scripts %}{% endblock %}
+</body>
+</html>

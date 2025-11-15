@@ -1,0 +1,12 @@
+:root{
+  --if-bg-1:#0a1b2f; --if-bg-2:#05101f; --if-grad-1:#12002f;
+  --if-text:#e5e7eb; --if-muted:#9ca3af;
+  --if-primary:#60a5fa; --if-accent:#22d3ee;
+  --if-danger:#f87171; --if-success:#34d399;
+  --if-surface:#1B263B; --if-surface-2:rgba(27,38,59,.6);
+  --if-blur:12px; --if-radius:1rem; --if-radius-2:1.5rem;
+  --if-shadow:0 10px 30px rgba(0,0,0,.35);
+  --z-nav:40; --z-overlay:50;
+  --if-h1:2rem; --if-h2:1.5rem; --if-h3:1.125rem;
+  --gap-section:2rem;
+}

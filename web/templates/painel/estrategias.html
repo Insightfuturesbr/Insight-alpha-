@@ -1,0 +1,195 @@
+{% extends "public/base.html" %}
+{% block title %}Estratégias - Insight Futures{% endblock %}
+{% block page_key %}estrategias{% endblock %}
+
+{% block body_wrapper %}
+<main data-page="estrategias">
+  <section class="container-if section">
+    <div class="flex items-center justify-between mb-4">
+      <h1 class="text-2xl font-bold">Minhas Estratégias</h1>
+      <form id="formNovaStrategy" class="flex gap-2" onsubmit="return false;">
+        <input name="nome_strategy" class="px-3 py-2 rounded bg-[#0f1b2b] border border-[#1f3352]" placeholder="Nome da estratégia">
+        <input name="ativo" class="px-3 py-2 rounded bg-[#0f1b2b] border border-[#1f3352]" placeholder="Ativo (ex: WIN, WDO)">
+        <button id="btnCriar" type="button" class="px-3 py-2 rounded bg-cyan-700 hover:bg-cyan-600">Criar</button>
+      </form>
+    </div>
+
+    <style>
+      /* Polished card layout just for this page */
+      .if-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 16px; }
+      @media (min-width: 768px) { .if-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (min-width: 1024px){ .if-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+      .if-card { background:#122033; border:1px solid #1f3352; border-radius: 14px; padding: 14px; display:flex; flex-direction:column; height: 220px; }
+      .if-card h3 { font-size: 1.05rem; font-weight: 600; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .if-badge { font-size: 10px; padding: 4px 8px; border-radius: 999px; background:#0b2a4a; color:#bfe9ff; }
+      .if-meta { font-size: 12px; opacity: .7; }
+      .if-chart { margin-top: 10px; height: 80px; }
+      .if-actions { margin-top: auto; display:flex; gap:6px; font-size:12px; }
+      .if-actions .btn { background:#0b2a4a; color:#c7f9ff; padding:6px 8px; border-radius:8px; border:1px solid #174166; }
+      .if-actions .btn:hover { background:#0e355b; }
+    </style>
+
+    <div id="gridMinhasStrategies" class="if-grid"></div>
+  </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const grid = document.getElementById('gridMinhasStrategies');
+
+  // Tiny sparkline renderer (inline SVG)
+  function renderSparkline(el, series, opts={}) {
+    if (!el || !series || !series.length) return;
+    const width = opts.width || el.clientWidth || 260;
+    const height = opts.height || el.clientHeight || 80;
+    const padding = 6;
+    const w = Math.max(40, width);
+    const h = Math.max(30, height);
+    const min = Math.min(...series);
+    const max = Math.max(...series);
+    const span = Math.max(1e-9, max - min);
+    const stepX = (w - padding*2) / Math.max(1, (series.length - 1));
+    const pts = series.map((v, i) => {
+      const x = padding + i * stepX;
+      const y = padding + (1 - (v - min)/span) * (h - padding*2);
+      return [x, y];
+    });
+    const path = pts.map((p,i)=> (i? 'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+    const last = pts[pts.length-1];
+    el.innerHTML = `
+      <svg viewBox="0 0 ${w} ${h}" width="100%" height="100%" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="sg" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#4fd1c5" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#4fd1c5" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="${path}"
+              fill="none" stroke="#4fd1c5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="${pts.map(p=>p.join(',')).join(' ')} ${w-padding},${h-padding} ${padding},${h-padding}"
+                  fill="url(#sg)" opacity="0.25"/>
+        <circle cx="${last[0]}" cy="${last[1]}" r="2.8" fill="#34d399"/>
+      </svg>`;
+  }
+
+  function randomWalk(n=24, start=100, vol=2) {
+    const out = []; let v = start;
+    for (let i=0;i<n;i++) { v += (Math.random()-0.5)*vol; out.push(Math.max(1, v)); }
+    return out;
+  }
+
+  const demoItems = [
+    { id: 'd1', title: 'SMA Crossover WIN', ativo: 'WIN', status: 'ativo' },
+    { id: 'd2', title: 'Breakout Diário WDO', ativo: 'WDO', status: 'teste' },
+    { id: 'd3', title: 'Reversão Intraday', ativo: 'WIN', status: 'pausado' },
+    { id: 'd4', title: 'Volatility Squeeze', ativo: 'WDO', status: 'ativo' },
+    { id: 'd5', title: 'Momentum Rider', ativo: 'WIN', status: 'ativo' },
+    { id: 'd6', title: 'Mean Reversion Lite', ativo: 'WDO', status: 'teste' },
+  ].map((it, idx) => ({
+    ...it,
+    created_at: new Date(Date.now() - (idx*86400000)).toISOString(),
+    spark: randomWalk(36, 100 + idx*3, 3)
+  }));
+
+function cardTemplate(s) {
+  const title = s.title || s.nome || 'Estratégia';
+  const ativo = s.ativo || '—';
+  const status = s.status || 'draft';
+  const created = s.created_at ? fmtDate(s.created_at) : '';
+  const chartId = `dspark_${s.id || Math.random().toString(36).slice(2)}`;
+
+  const controlsHTML = `
+    <div class="if-cta-wrap">
+      <button type="button" class="if-btn" data-action="ativar" aria-label="Ativar automação">
+        <svg class="if-ic" viewBox="0 0 24 24" fill="none">
+          <path d="M8 5v14l11-7L8 5z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/>
+        </svg>
+        <span>Ativação</span>
+      </button>
+      <button type="button" class="if-btn if-btn--pause" data-action="pausar" aria-label="Pausar automação">
+        <svg class="if-ic" viewBox="0 0 24 24" fill="none">
+          <path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor"/>
+        </svg>
+        <span>Pausa</span>
+      </button>
+      <button type="button" class="if-btn if-btn--rev" data-action="reverse" aria-label="Ativar Reverse Mode">
+        <svg class="if-ic" viewBox="0 0 24 24" fill="none">
+          <path d="M7 7h9.5l-2.5-2.5M17 17H7.5L10 19.5"
+                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Reverse Mode</span>
+        <span class="if-badge-mini">beta</span>
+      </button>
+    </div>`;
+
+  return `
+    <div class="if-card">
+      <div class="flex items-center justify-between mb-1">
+        <h3 title="${title}">${title}</h3>
+        <span class="if-badge">${status}</span>
+      </div>
+      <div class="if-meta">Ativo: <strong>${ativo}</strong>${created ? ` · ${created}` : ''}</div>
+      <div id="${chartId}" class="if-chart"></div>
+      <div class="if-actions">
+        <a class="btn" href="${(s.actions && (s.actions.analise_pre)) || '#'}">Pré</a>
+        <a class="btn" href="${(s.actions && (s.actions.analise_padronizada || s.actions.analise_pad)) || '#'}">Padronizada</a>
+        <a class="btn" href="${(s.actions && s.actions.drawdown) || '#'}">Drawdown</a>
+        <a class="btn" href="${(s.actions && s.actions.backtest) || '#'}">Backtest</a>
+        <a class="btn" href="${(s.actions && s.actions.insights) || '#'}">Insights</a>
+      </div>
+      ${controlsHTML}
+    </div>`;
+}
+
+    `;
+  }
+  // placeholder de clique (por enquanto só loga)
+    document.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('.if-btn[data-action]');
+      if (!btn) return;
+      const action = btn.dataset.action; // "ativar" | "pausar" | "reverse"
+      const card = btn.closest('.if-card');
+      const name = card?.querySelector('h3')?.textContent?.trim() || 'Estratégia';
+      console.log(`[dashboard] ${name}: clique em ${action}`);
+    });
+
+
+  async function carregar() {
+    try {
+      const r = await fetch('/api/strategies/recent?limit=100', { cache: 'no-store' });
+      const j = await r.json();
+      let items = (j.items || []).map((s, idx) => ({
+        ...s,
+        id: s.id || `r${idx}`,
+        spark: randomWalk(36, 98 + (idx%5)*2, 2.5)
+      }));
+      if (!items.length) items = demoItems;
+
+      grid.innerHTML = items.map(cardTemplate).join('');
+      // Render sparklines
+      items.forEach(s => {
+        const cid = s.id ? `spark_${s.id}` : null;
+        const el = cid ? document.getElementById(cid) : null;
+        const series = (s.spark && s.spark.length) ? s.spark : (el && el.dataset.series ? el.dataset.series.split(',').map(Number) : []);
+        if (el) renderSparkline(el, series);
+      });
+    } catch (e) {
+      console.error('[estrategias] falha ao carregar:', e);
+      // Fallback visual: demo cards even if request fails
+      grid.innerHTML = demoItems.map(cardTemplate).join('');
+      demoItems.forEach(s => {
+        const el = document.getElementById(`spark_${s.id}`);
+        if (el) renderSparkline(el, s.spark);
+      });
+    }
+  }
+
+  document.getElementById('btnCriar')?.addEventListener('click', async () => {
+    // Placeholder: poderia chamar uma rota de criação; por ora, apenas recarrega a lista
+    await carregar();
+  });
+
+  document.addEventListener('DOMContentLoaded', carregar);
+</script>
+{% endblock %}

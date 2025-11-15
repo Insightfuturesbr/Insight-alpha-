@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ResultadosCiclosLucroV1",
+  "type":"array",
+  "items":{
+    "type":"object",
+    "required":[
+      "ID Ciclo de Lucro","Data Início","Data Fim","Duração do Ciclo",
+      "Lucro Gerado no Ciclo","Média Lucros Até o Ciclo","Percentil 25 Lucros Até o Ciclo"
+    ],
+    "properties":{
+      "ID Ciclo de Lucro":{"type":"integer","minimum":0},
+      "Data Início":{"type":"string"},
+      "Data Fim":{"type":"string"},
+      "Duração do Ciclo":{"type":"string"},
+      "Lucro Gerado no Ciclo":{"type":"number"},
+      "Média Lucros Até o Ciclo":{"type":"number"},
+      "Percentil 25 Lucros Até o Ciclo":{"type":"number"}
+    },
+    "additionalProperties": false
+  }
+}

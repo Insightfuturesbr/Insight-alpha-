@@ -1,0 +1,32 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"VariaveisFluxoV1",
+  "type":"object",
+  "required":[
+    "caixa_liquido_atual","divida_acumulada","valor_emprestado","amortizacao","lucro_gerado","total_taxas_simuladas",
+    "maxima_divida","media_das_maximas_dividas","perc25_das_maximas_dividas","posicao_relativa_final","destaque",
+    "qtde_emprestado","qtde_amortizacao","qtde_lucro","total_linhas",
+    "perc_emprestado","perc_amortizacao","perc_lucro"
+  ],
+  "properties":{
+    "caixa_liquido_atual":{"type":"number"},
+    "divida_acumulada":{"type":"number"},
+    "valor_emprestado":{"type":"number"},
+    "amortizacao":{"type":"number"},
+    "lucro_gerado":{"type":"number"},
+    "total_taxas_simuladas":{"type":"number"},
+    "maxima_divida":{"type":"number"},
+    "media_das_maximas_dividas":{"type":"number"},
+    "perc25_das_maximas_dividas":{"type":"number"},
+    "posicao_relativa_final":{"type":"number"},
+    "destaque":{"type":"string"},
+    "qtde_emprestado":{"type":"integer","minimum":0},
+    "qtde_amortizacao":{"type":"integer","minimum":0},
+    "qtde_lucro":{"type":"integer","minimum":0},
+    "total_linhas":{"type":"integer","minimum":0},
+    "perc_emprestado":{"type":"number"},
+    "perc_amortizacao":{"type":"number"},
+    "perc_lucro":{"type":"number"}
+  },
+  "additionalProperties":false
+}

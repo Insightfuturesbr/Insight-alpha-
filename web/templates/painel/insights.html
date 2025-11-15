@@ -1,0 +1,36 @@
+{% extends "public/base.html" %}
+{% block title %}Insights - Insight Futures{% endblock %}
+{% block page_key %}insights{% endblock %}
+
+{% block body_wrapper %}
+<main data-page="insights">
+<section id="insights" class="container-if section">
+  <header class="mb-6">
+    <h2 class="text-2xl md:text-3xl font-semibold text-gradient">🔍 Insights Inteligentes</h2>
+    <p class="text-sm text-slate-300">Sinais práticos a partir do comportamento atual da sua estratégia.</p>
+  </header>
+
+  <div class="card p-6">
+    <!-- Header da lista -->
+    <div class="flex items-center justify-between mb-4">
+      <p class="text-sm text-slate-400">Última atualização: <span id="insightsUpdated">—</span></p>
+      <button id="btnRefreshInsights" class="bg-cyan-500 hover:bg-lime-400 text-black text-sm font-semibold px-3 py-1 rounded">
+        Atualizar
+      </button>
+    </div>
+
+    <!-- Lista -->
+    <ul id="listaInsights" class="list-disc ml-6 space-y-2 text-slate-200">
+      <li class="text-slate-400">Carregando…</li>
+    </ul>
+
+    <!-- Empty state -->
+    <div id="insightsEmpty" class="hidden text-sm text-slate-400 mt-3">
+      Nenhum insight disponível no momento. Faça um <a class="underline" href="{{ url_for('painel_routes.upload_page') }}">upload</a> de uma estratégia ou rode um <a class="underline" href="{{ url_for('painel_routes.parametrizacao') }}">backtest</a>.
+    </div>
+  </div>
+</section>
+</main>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"StatsCicloV1",
+  "type":"object",
+  "required":[
+    "media","referencia_percentil","extrema","valor_atual",
+    "posicao_relativa","destaque"
+  ],
+  "properties":{
+    "media":{"type":"number"},
+    "referencia_percentil":{"type":"number"},
+    "extrema":{"type":"number"},
+    "valor_atual":{"type":"number"},
+    "posicao_relativa":{"type":"number"},
+    "destaque":{"type":"string"}
+  },
+  "additionalProperties":false
+}
+
+
+

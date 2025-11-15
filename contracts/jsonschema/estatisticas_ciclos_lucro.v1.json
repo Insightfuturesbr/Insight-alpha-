@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"EstatisticasCiclosLucroV1",
+  "type":"object",
+  "required":[
+    "quantidade_ciclos_lucro","maior_lucro_ciclo","media_lucros",
+    "percentil_75_lucros","lucro_ciclo_atual"
+  ],
+  "properties":{
+    "quantidade_ciclos_lucro":{"type":"integer","minimum":0},
+    "maior_lucro_ciclo":{"type":"number"},
+    "media_lucros":{"type":"number"},
+    "percentil_75_lucros":{"type":"number"},
+    "lucro_ciclo_atual":{"type":"number"}
+  },
+  "additionalProperties": false
+}

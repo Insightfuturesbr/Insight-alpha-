@@ -1,0 +1,12 @@
+{
+  "resultado_liquido_final": 0,
+  "drawdown_maximo": 0,
+  "maior_lucro_acumulado": 0,
+  "n_operacoes_automacao_ativada": 0,
+  "n_operacoes_positivas": 0,
+  "n_operacoes_negativas": 0,
+  "n_operacoes_amortizacao": 0,
+  "soma_lucro_gerado": 0,
+  "soma_valor_emprestado": 0,
+  "soma_amortizacao": 0
+}

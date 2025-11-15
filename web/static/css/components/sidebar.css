@@ -1,0 +1,12 @@
+.sidebar{
+  position:fixed; inset:0 auto 0 0; width:80px; z-index:var(--z-nav);
+  padding-block:1rem; color:#fff;
+  background:linear-gradient(180deg, var(--if-grad-1), var(--if-bg-1), var(--if-bg-2));
+  display:grid; grid-template-rows:auto 1fr auto; justify-items:center; gap:1rem;
+}
+.sidebar__brand img{width:32px;height:32px}
+.sidebar__nav{align-self:center;display:flex;flex-direction:column;gap:1.25rem;text-align:center;font-size:.75rem}
+.sidebar__nav a{transition:transform .2s,color .2s,opacity .2s;opacity:.9}
+.sidebar__nav a:hover{transform:scale(1.08);color:#bef264;opacity:1}
+.main-with-sidebar{padding-left:80px}
+@media (min-width:768px){.sidebar{width:80px}.main-with-sidebar{padding-left:80px}}
